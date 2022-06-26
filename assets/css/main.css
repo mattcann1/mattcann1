@@ -2593,7 +2593,9 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		/* background-image: url("images/overlay.png"), url("../../images/bg.jpg"); */
+        background: rgb(7,34,39);
+        background: linear-gradient(180deg, rgba(7,34,39,1) 0%, rgba(53,133,139,1) 76%, rgba(79,189,186,1) 100%);
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
