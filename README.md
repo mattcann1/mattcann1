@@ -11,6 +11,14 @@
 
 <br />
 
+<br />
+<p align="center">
+<img src="https://github-readme-stats.vercel.app/api?username=mattcann1&count_private=true&theme=dracula&show_icons=true" width="410"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mattcann1&count_private=true&layout=compact&theme=dracula" width="400" />
+</p>
+
+<br />
+
 
 ### Hobbies
 - 🏃 Running
