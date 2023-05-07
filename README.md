@@ -37,7 +37,6 @@
 
 - Favorite Productivity [Playlist][Productivity]
 
-- Favorite 2021 Album: [Donda][donda] - Kayne West
 
 <br/>
 
