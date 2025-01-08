@@ -2595,10 +2595,12 @@ input, select, textarea {
 		background-attachment: scroll,								scroll;
 		/* background-image: url("images/overlay.png"), url("../../images/bg.jpg"); */
         background: rgb(7,34,39);
-        background: linear-gradient(180deg, rgba(7,34,39,1) 0%, rgba(53,133,139,1) 76%, rgba(79,189,186,1) 100%);
+        /* background: linear-gradient(180deg, rgba(7,34,39,1) 0%, rgba(53,133,139,1) 76%, rgba(79,189,186,1) 100%); */
+		background: rgb(72,55,48);
+		background: linear-gradient(0deg, rgba(72,55,48,1) 10%, rgba(37,93,63,1) 100%);
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
+		background-size: auto,								100%;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
