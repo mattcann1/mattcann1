@@ -1,11 +1,12 @@
 <h1 align="center">Hi 👋, I'm Matt</h1>
-<h3 align="center"> Renewable Energy Researcher, Data Scientist, Mechanical Engineer. </h3>
+<h3 align="center"> Software Developer | Data 
+Scientist | Mechanical Engineer </h3>
 <br />
 
 ### About Me
-💻 Currently working as software developer intern at EnergyToolbase.
+💻 Currently working as software developer at Hexagon.
 
-📊 Previous Data science intern at startup IoAirflow. 
+📊 Previous Data science Researcher at startup IoAirflow. 
 
 🤠 Living in Calgary, Alberta, Canada. 
 
@@ -22,23 +23,10 @@
 
 ### Hobbies
 - 🏃 Running
-- 🪡 Leather Working
 
 <br />
 
-### 📚  Books I'm Reading 
 
- - [Born to Run][born_to_run] by Christopher McDougall.
--  [Sapiens][sapiens] by Yuval Noah Harari.
-
-<br />
-
-###  🎵  Music 
-
-- Favorite Productivity [Playlist][Productivity]
-
-
-<br/>
 
 ### Connect with me
 
