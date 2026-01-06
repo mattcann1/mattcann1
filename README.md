@@ -1,48 +1,78 @@
-<h1 align="center">Hi 👋, I'm Matt</h1>
-<h3 align="center"> Software Developer | Data 
-Scientist | Mechanical Engineer </h3>
-<br />
+<h1 align="center">Hi 👋, I'm Matt Cann</h1>
+<h3 align="center">Software Developer | Python Infrastructure Specialist | Data Engineering Expert</h3>
 
-### About Me
-💻 Currently working as software developer at Hexagon.
-
-📊 Previous Data science Researcher at startup IoAirflow. 
-
-🤠 Living in Calgary, Alberta, Canada. 
-
-<br />
-
-<br />
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=mattcann1&count_private=true&theme=dracula&show_icons=true" width="410"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mattcann1&count_private=true&layout=compact&theme=dracula" width="400" />
+  <em>Building scalable, high-performance software systems with a passion for quality engineering and data-driven solutions</em>
 </p>
 
 <br />
 
+## 🚀 What I'm Up To
 
-### Hobbies
-- 🏃 Running
+🔧 **Recently**: Completed 3 years at **Hexagon | NovAtel** where I delivered **20+ production Python package releases** supporting mission-critical GNSS testing infrastructure
+
+🏆 **Achievement Unlocked**: Received **Hexagon Award** for mentoring excellence and fostering software development best practices
+
+📊 **Current Focus**: Seeking new opportunities in software development, specializing in Python infrastructure, testing automation, and data engineering
+
+🌱 **Learning**: Advanced database optimization, mutation testing frameworks, and distributed systems architecture
 
 <br />
 
 
-
-### Connect with me
-
-- [<img align="left" width="22px" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" />][linkedin]<br>
-
-- [<img align="left" width="22px" src="https://www.clipartmax.com/png/full/293-2939202_website-development-customisation-web-design-website-icon.png" />][website]
+## 🌍 Background
 
 
-[born_to_run]: https://www.amazon.ca/Born-Run-Hidden-Superathletes-Greatest/dp/0307279189
+📊 **Experience**: 5+ years in software development, data science, and renewable energy
 
-[sapiens]: https://www.amazon.ca/Sapiens-Humankind-Yuval-Noah-Harari/dp/0771038518/ref=sr_1_1?gclid=CjwKCAiArOqOBhBmEiwAsgeLmTJ_cDqm5OjQSj7kee5QQk9lrqYaWkjivbsBD5QW9siry6SPnohOrhoCabsQAvD_BwE&hvadid=208410990896&hvdev=c&hvlocphy=9001173&hvnetw=g&hvqmt=e&hvrand=11605603815499735183&hvtargid=kwd-297764258349&hydadcr=22426_9261600&keywords=sapiens+book&qid=1641752704&sr=8-1
+🎓 **Education**: 
+- MSc Mechanical Engineering | University of Waterloo
+- BSc Mechanical Engineering (Distinction) | University of Manitoba
 
-[Productivity]: https://open.spotify.com/playlist/09EmW8vR87oa3CGq6qBrNK?si=92d57c62d2384e9a
+📍 **Location**: Calgary, Alberta, Canada 🇨🇦
 
-[donda]: https://open.spotify.com/album/5CnpZV3q5BcESefcB3WJmz?si=zW2Odi8oSYKXHHkBlkePHQ
+<br />
 
-[linkedin]: www.linkedin.com/in/matthew-cann
- 
- [website]: https://mattcann1.github.io/mattcann1/
+[//]: # ()
+[//]: # (## 📊 GitHub Stats)
+
+[//]: # ()
+[//]: # (<p align="center">)
+
+[//]: # (<img src="https://github-readme-stats.vercel.app/api?username=mattcann1&count_private=true&theme=dracula&show_icons=true" width="410"/>)
+
+[//]: # (<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mattcann1&count_private=true&layout=compact&theme=dracula" width="400" />)
+
+[//]: # (</p>)
+
+[//]: # ()
+[//]: # (<br />)
+
+## 🏃 Beyond Code
+
+- 🏃 **Running**: Always training for the next half-marathon or 10k
+- 🌱 **Renewable Energy**: Passionate about sustainable technology solutions
+- 📚 **Continuous Learning**: Always exploring new technologies and methodologies
+- � **Mentorship**: Helping developers grow through best practices and knowledge sharing
+
+<br />
+
+## 🤝 Connect With Me
+
+<p align="left">
+<a href="https://www.linkedin.com/in/matthew-cann" target="_blank"><img align="center" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" height="30" width="30" /></a> &nbsp;
+<a href="https://mattcann1.github.io/mattcann1/" target="_blank"><img align="center" src="https://www.clipartmax.com/png/full/293-2939202_website-development-customisation-web-design-website-icon.png" alt="Portfolio Website" height="30" width="30" /></a> &nbsp;
+<a href="mailto:matthewcameroncann@gmail.com"><img align="center" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" height="30" width="30" /></a>
+</p>
+
+<br />
+
+---
+
+<p align="center">
+  <em>⚡ "Data is the foundation of today and the promise of tomorrow."</em>
+</p>
+
+<p align="center">
+  💼 Open to opportunities in Software Development, Data Engineering, and DevOps roles
+</p>
