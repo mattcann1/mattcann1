@@ -30,25 +30,100 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Software Developer</h2>
+							<h2>Software Developer - Test Infrastructure & Tooling</h2>
 						</header>
 						<p>
 							<br>
 							<img class="w3-image"><img src="images/hex/HEXAGON_LOGO_TAGLINE_Standard_CMYK.jpg",
 													   style = "width:50%;position: relative; bottom: 40px;padding-bottom: 10px;" alt="" /><br>
 							<b style = "color: black; font-weight: 900; ">
-								2023-Present</b>
+								June 2023 - Present</b>
 							<br>
 							
 							<br>
-							<ul>
-								<li>Redesigned existing and newly developed Python tools for scalability and reliability using design patterns to boost code quality
-								and extend functionality company-wide. </li>
-								<li>Improved scalability of systems by reducing file processing time by 96% through strategic Python performance optimization.</li>
-								<li>Received a Hexagon award for mentoring software developers on best software development practices, unit testing
-								methodologies, and CI/CD integration, fostering a culture of continuous improvement within the team.</li>
+							<h3 style="color: #49bf9d; margin-top: 20px;">Impact Summary</h3>
+							<p style="font-size: 1.1em; line-height: 1.6em;">
+								Led the development and modernization of critical Python infrastructure packages supporting GNSS receiver testing across Hexagon's Autonomy & Positioning division. 
+								Delivered 20+ production releases, implemented mutation testing pipeline improvements, and architected time-series database solutions managing 13.5+ million records.
+								<strong>Recognized with Hexagon Award for mentoring excellence and fostering software development best practices.</strong>
+							</p>
 
-							  </ul>
+							<h3 style="color: #49bf9d; margin-top: 30px;">Key Accomplishments</h3>
+							
+							<h4 style="margin-top: 20px;">🚀 Package Development & Releases (20+ Production Releases)</h4>
+							<ul style="line-height: 1.8em;">
+								<li><strong>nov-port-connection v1.0.9:</strong> Delivered robust port communication stack with multi-decoder support, USB/Ethernet reconnection enhancements, and dynamic error detection using EDIE decoder</li>
+								<li><strong>nov-subprocess-manager v2.1.7:</strong> Resolved critical race conditions and queue lifecycle management issues, significantly improving service stability</li>
+								<li><strong>nov-artifactory-communicator v1.3.2:</strong> Built internal Artifactory client with pathlib-like interface, achieving feature parity with open-source alternatives plus custom conveniences like trigger build downloads</li>
+								<li><strong>nov-requirement-traceability v0.4.0:</strong> Implemented YAML validation and test coverage strength metrics to improve requirement tracking across test suites</li>
+								<li><strong>nov-time v2.4.2:</strong> Enhanced time series handling with robust NaN handling and multi-datetime support for real-world data gaps</li>
+								<li><strong>nov-stig-metrics v0.1.5:</strong> Improved code quality metrics publishing with enhanced encoding fallback mechanisms</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">⚡ Performance & Optimization</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Achieved <strong>96% reduction in file processing time</strong> through strategic Python performance optimization and HTTP client benchmarking</li>
+								<li>Identified <strong>56% average iteration-time improvement</strong> by migrating from Requests to HTTPx for Artifactory operations</li>
+								<li>Optimized database ingestion and query performance for constellation monitoring system handling millions of satellite records</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">🏗️ Architecture & Modernization</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Led complete refactor of <strong>nov-port-connection</strong> to nov-data-collection suite, improving maintainability and integration</li>
+								<li>Replaced monolithic port connection class with USB/COM-specific implementations for greater flexibility</li>
+								<li>Migrated multiple packages to new STIG default pipeline with requirement traceability and metrics publishing</li>
+								<li>Designed and documented database refactor strategy improving transparency and scalability of data flow architecture</li>
+								<li>Implemented log rotation, RESET/FRESET hardware control methods, and command encoding support with EDIE</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">🎯 Quality Engineering & Testing Excellence</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Pioneered <strong>mutation testing rollout</strong> across all STIG pipelines, achieving ~83% average mutation score across packages</li>
+								<li>Increased unit test coverage from <strong>48% to 71%</strong> for nov-artifactory-communicator service, API, and utility layers</li>
+								<li>Backfilled historical STIG metrics enabling trend analysis for code quality, test coverage, and test counts over time</li>
+								<li>Integrated SonarCube for tech debt surfacing and systematically resolved cognitive complexity issues</li>
+								<li>Implemented automated CI/CD checks for documentation quality and naming convention compliance</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">📊 Data Engineering & Database Solutions</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Led <strong>Constellation Monitoring database modernization</strong>: evaluated QuestDB, TimescaleDB, InfluxDB, and MongoDB for time-series workloads</li>
+								<li>Successfully migrated 13.5+ million satellite records from ElasticSearch to QuestDB with optimized schema design</li>
+								<li>Deployed production QuestDB instance with SSL, replicated all critical dashboards in Grafana, and integrated with existing monitoring pipeline</li>
+								<li>Prototyped anomaly detection system moving beyond simple thresholding for satellite health monitoring</li>
+								<li>Delivered comprehensive evaluation reports with ingestion rate, query performance, and visualization load time analysis</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">👨‍🏫 Leadership & Enablement</h4>
+							<ul style="line-height: 1.8em;">
+								<li><strong>Received Hexagon Award</strong> for mentoring developers on software development best practices, unit testing methodologies, and CI/CD integration</li>
+								<li>Presented Requirement Traceability work to Python Community of Practice driving company-wide adoption</li>
+								<li>Created <strong>GitLab Pages STIG project dashboard</strong> with live pipeline badges, coverage metrics, and full-text search for improved visibility</li>
+								<li>Led stakeholder workshops for nov_event_suite design, gathering requirements and shipping prototype alphas based on feedback</li>
+								<li>Overhauled STIG Documentation Hub with reorganized content for clarity and compliance</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Technical Skills Demonstrated</h3>
+							<ul style="line-height: 1.8em;">
+								<li><strong>Languages:</strong> Python (expert-level), SQL</li>
+								<li><strong>Testing:</strong> Pytest, Mutation Testing (MutMut, Cosmic-Ray), Unit Testing, Integration Testing, Coverage Analysis</li>
+								<li><strong>DevOps:</strong> GitLab CI/CD, Jenkins, Docker, Pipeline Design, Artifactory</li>
+								<li><strong>Databases:</strong> QuestDB, TimescaleDB, MongoDB, ElasticSearch, Database Schema Design</li>
+								<li><strong>Tools & Frameworks:</strong> FastAPI, HTTPx, asyncio, multiprocessing, SonarCube, Grafana</li>
+								<li><strong>Software Engineering:</strong> Design Patterns, Architecture Refactoring, Performance Optimization, API Design</li>
+								<li><strong>Communication & Protocols:</strong> USB, Ethernet, Serial (COM), GNSS protocols</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Quantifiable Impact</h3>
+							<ul style="line-height: 1.8em;">
+								<li>📦 <strong>20+ production package releases</strong> across 8+ critical infrastructure packages</li>
+								<li>⚡ <strong>96% reduction</strong> in file processing time</li>
+								<li>📈 <strong>48% → 71% test coverage improvement</strong> on key packages</li>
+								<li>🎯 <strong>~83% mutation testing score</strong> average across pipelines</li>
+								<li>💾 <strong>13.5+ million records</strong> migrated and optimized in database modernization</li>
+								<li>🏆 <strong>Hexagon Award recipient</strong> for technical mentorship</li>
+								<li>📚 Increased codebase quality scores from <strong>9.09 to 9.75/10</strong> through systematic improvements</li>
+							</ul>
 
 						
 							  <br><a href="index.html" class="button">Back</a>
@@ -65,7 +140,7 @@
 							<ul class="labeled-icons">
 								<li>
 									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-									mcann@uwaterloo.ca
+									matthewcameroncann@gmail.com
 								</li>
 
 							</ul>
