@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matthew Cann</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+				<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
+		</header>
+
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>FlightDeck — GNSS Hardware Test Console</h2>
+						</header>
+						<p>
+							<br>
+							<img class="w3-image"><img src="../images/hex/HEXAGON_LOGO_TAGLINE_Standard_CMYK.jpg",
+													   style = "width:50%;position: relative; bottom: 40px;padding-bottom: 10px;" alt="" /><br>
+							<b style = "color: black; font-weight: 900; ">Hexagon | NovAtel</b>
+							<br>
+
+							<div class="tech-tags">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">FastAPI</span>
+								<span class="tech-tag">pydantic</span>
+								<span class="tech-tag">asyncio</span>
+								<span class="tech-tag">React</span>
+								<span class="tech-tag">TypeScript</span>
+								<span class="tech-tag">WebSocket</span>
+								<span class="tech-tag">pywebview</span>
+								<span class="tech-tag">GitLab CI/CD</span>
+							</div>
+
+							<div class="impact-box">
+								<p>
+									Hardware test engineers at NovAtel rely on GNSS receivers configured and operated through a fragile, per-device command-line workflow.
+									I designed and built a full-stack browser-based console that replaces that workflow end to end — giving engineers real-time control over receiver connections,
+									live telemetry, and automated test sequences from a single desktop application. I was the sole developer across requirements, architecture, backend, frontend,
+									hardware integration, CI/CD, and documentation for the initial release milestones.
+								</p>
+							</div>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Key Accomplishments</h3>
+
+							<h4 style="margin-top: 20px;">🏗️ Architecture &amp; Real-Time Systems</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Designed a hardware abstraction layer that unifies Serial, USB, TCP, and UDP receiver connections behind a single async interface, enabling reliable concurrent multi-port operation</li>
+								<li>Built an event-driven WebSocket broker so the UI reflects live hardware state, telemetry, and streaming logs without any client-side polling</li>
+								<li>Implemented a layered device-identification pipeline with multiple fallback parsing strategies, keeping the tool reliable across receiver firmware variation</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">⚙️ Automation &amp; Workflow</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Built an asynchronous recipe-automation engine for multi-step test sequences with pause, resume, skip, and abort controls — removing repetitive manual command entry from long-duration data collection runs</li>
+								<li>Designed a two-tier configuration system (built-in + user-defined) so engineers could rely on standard test configurations while still customizing and sharing their own</li>
+								<li>Added a generated-script export feature so any saved test sequence can be reproduced outside the application</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">📦 Delivery &amp; Packaging</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Packaged the application as a self-contained Windows installer — no separate browser or Python runtime required — for frictionless distribution to test engineers</li>
+								<li>Established a CI/CD pipeline with an automated API contract-verification gate and versioned artifact publishing on every release, removing manual distribution steps</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Quantifiable Impact</h3>
+							<ul style="line-height: 1.8em;">
+								<li>🔌 Replaced a per-device CLI scripting workflow across <strong>8+ hardware test campaigns</strong></li>
+								<li>⚡ Reduced multi-port connection setup from a multi-step manual process to a <strong>single UI interaction</strong></li>
+								<li>⏱️ Eliminated repeated manual command entry on long-duration runs (300s–10min+) via recipe automation</li>
+								<li>🚀 Zero manual steps from merge to distributed installer via CI/CD</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Screenshots</h3>
+							<div class="screenshot-gallery">
+								<figure>
+									<img src="../images/flightdeck/run-collection.png" alt="FlightDeck Data Collection Mode running an automated recipe against a NovAtel receiver" />
+									<figcaption>Recipe automation: running a multi-step collection sequence against a NovAtel OEM7700 receiver, with live PLI and GPS log output.</figcaption>
+								</figure>
+								<figure>
+									<img src="../images/flightdeck/quick-connect.png" alt="FlightDeck Quick Connect view showing live console output and saved log combinations" />
+									<figcaption>Quick Connect: live console/log streaming, decoder selection, and saved log combinations for fast manual receiver inspection.</figcaption>
+								</figure>
+							</div>
+
+							<br><a href="../index.html#projects" class="button">Back</a>
+
+					</section>
+
+
+				<!-- Four -->
+				<section id="four">
+					<h2>Get In Touch</h2>
+					<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
+
+						<div class="col-4 col-12-small">
+							<ul class="labeled-icons">
+								<li>
+									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+									matthewcameroncann@gmail.com
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+					</ul>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Lightbox overlay for screenshot gallery -->
+		<div class="lightbox-overlay" id="lightbox-overlay">
+			<img id="lightbox-overlay-img" src="" alt="" />
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				(function () {
+					var overlay = document.getElementById('lightbox-overlay');
+					var overlayImg = document.getElementById('lightbox-overlay-img');
+
+					document.querySelectorAll('.screenshot-gallery img').forEach(function (img) {
+						img.addEventListener('click', function () {
+							overlayImg.src = img.src;
+							overlayImg.alt = img.alt;
+							overlay.classList.add('is-visible');
+						});
+					});
+
+					overlay.addEventListener('click', function () {
+						overlay.classList.remove('is-visible');
+						overlayImg.src = '';
+					});
+
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') {
+							overlay.classList.remove('is-visible');
+							overlayImg.src = '';
+						}
+					});
+				})();
+			</script>
+
+	</body>
+</html>

@@ -6,21 +6,23 @@
 -->
 <html>
 	<head>
-		<title>Matthew Cann </title>
+		<title>Matthew Cann</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
 		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
 
 	</head>
 	<body class="is-preload">
+
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
-					<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
-						<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
-			</header>
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+				<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
+		</header>
 
 
 		<!-- Main -->
@@ -29,118 +31,138 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Undergraduate Thesis</h2>
-
+							<h2>Data Science Researcher</h2>
 						</header>
 						<p>
-							<img class="w3-image"><img src="images/uofm.jpg", style = "width:30%;position: relative; left: -20px; bottom: 20px;padding-bottom: 00px;" alt="" /><br>
-							<b style = "color: black; font-weight: 900; "> 2018-2019</b><br><br>
-
-							The global push for energy conservation and energy-efficient systems has fueled the interest in heat
-							exchanger research. Furthermore, the effect of the quality of the grid and mesh generation software on
-							the accuracy, convergence, and computational resource has not been demonstrated in the literature.
-							The research in heat exchanger enhancement through improving the design and further contribute to
-							current literature was the basis for this research.<br>
-							This thesis presents the optimization of an existing compact heat exchanger design using data from
-							computational fluid dynamics (CFD) analyses. The geometry chosen for the study was a commonly found
-							Z configuration heat exchanger with two branches. <br>
-
-
-							<br><img class="w3-image"  src="images/Undergrad_thesis/Geo.png", style = "width:50%;" alt="" />(a)
-							<img class="w3-image"  src="images/Undergrad_thesis/Geo2.png", style = "width:15%;" alt="" />(b)<br>
-							<figcaption style = "font-style: italic; ">Fig.1 - Configuration A dimensions for (a) side view and (b) front view in mm. </figcaption>
-
-
 							<br>
-							The geometry was then discretized into a variety of grids and quantitative comparison of generated meshes and the effects of meshing parameters provided
-							a suitable approach to mesh the geometry. 
-
-							<br><img class="w3-image"  src="images/Undergrad_thesis/Mesh_hex.png", style = "width:40%;" alt="" />(a)
-							<img class="w3-image"  src="images/Undergrad_thesis/Mesh_tetra.png", style = "width:40%;" alt="" />(b)<br>
-							<figcaption style = "font-style: italic; ">Fig.2 - Magnified views of the refernce mesh using (a) hexahedral and (b) tetrahedral elements. </figcaption>
-
-							<br>With the boundary conditions and domain, the fluid field was solved using CFD simulations through ANSYS CFX 19.2. A parametric study was conducted to
-                            identify the factors that produce an efficient and optimal design of a branching flow heat exchanger.
+							<img class="w3-image"><img src="../images/ioAirFlow-logo.png", style = "width:20%;position: relative; bottom: 40px;padding-bottom: 10px;" alt="" /><br>
+							<b style = "color: black; font-weight: 900; "> 2021</b>
+							<br>
 							
-							<br><br>
+							<br>• Led the development of a predictive building management software using machine learning to reduce HVAC emissions by 20%.<br><br>
+							• Developed a fault detection and validation system for industrial HVAC equipment, leveraging data-driven algorithms and IoT
+							sensor data, resulting in over 80% confidence in operational efficiency.<br><br>
+							• Created dashboards and report visualizations to enable clients to quickly understand how their building portfolio performed
+							against key indicators, such as energy consumption and indoor air quality.<br><br>
+	
+							• Developed a novel air exchange rate algorithm to determine ventilation rates in commercial buildings.<br><br>
 
-							<header>
-								<h3>Mesh Analysis</h3>
+							<h3> Ventilation</h3>
+							<ul>
+								<li>Ventilation system performance is integral to the comfort and safety of the occupants. </li>
+								<li>Poor ventilation can lead to human response symptoms of sick building syndrome: Headache, shortness of breath, mental fatigue, and absenteeism.</li>
+								<li>Inadequate ventilation major contributor to the prevention of aerosol transmission of respiratory viruses.</li>
+							  </ul>
+							  <br><img  class="w3-image" border-radius=100%; src="../images/ioairflow/vent.png" alt="" style="height:300px;"></img><br><br>
+							  <ol>
+								<li>Measured ventilation rate.</li>
+								<ul>
+									<li>Ventilation rate was calculated using the observed decay of the natural tracer gas carbon dioxide concentration during times of reducing occupancy.</li> 
+									<li>Scoring: Average ventilation rate for each space is scored based on thresholds derived from ASHRAE 62.1-2010 and WELL v2 A06 Enhanced Ventilation.
+									</li>
+
+								</ul>
+								<li>Short-term carbon dioxide exposure.
+								<ul>
+									<li>Effectiveness of the ventilation system to quickly remove or disperse large sources of aerosols.</li> 
+									<li>Scoring: Percentage time carbon dioxide short-term averages levels spent in each threshold range derived from literature.
+									</li>
+
+								</ul>
+								</li>
+								<li>Negative pressure analysis.
+									<ul>
+										<li>Reduces the risk of microorganisms (Coronavirus) being spread by airborne transmission and odor spread.</li> 
+										<li>Scoring: Percentage time spent in each threshold range ASHRAE Standard 170.
+										</li>
+	
+									</ul>
+								</li>
+							  </ol>
+
+							  <h4> Ventilation - Client Value</h4>
+							  <ul>
+								<li>Ventilation Rate: Offers verification of actual ventilation rates in spaces including HVAC and natural ventilation. Proper ventilation ensures peace of mind and minimization of sick building syndrome.  
+								</li> 
+								<li>Ventilation System: Identify building space risk levels to short-term CO2 exposures, allowing them to repair system malfunctions or implement additional precautions (air cleaning units, changed occupancy schedules etc.)
+								</li> 
+								<li>Pressure Analysis: Identify areas of interest are adequately negatively pressurised to protect occupants. 
+								</li> 
+							  </ul>
+
+							  <h4> Ventilation Rate Calculation</h4>
+							  <ul>
+								<li>Ventilation rate was calculated using the observed decay of the natural tracer gas carbon dioxide concentration during times of reducing occupancy.</li> 
+								<li>Scoring: Average ventilation rate for each space is scored based on thresholds derived from ASHRAE 62.1-2010 and WELL v2 A06 Enhanced Ventilation.
+								</li> 
+
+							  </ul>
+							  <br><img  class="w3-image" border-radius=100%; src="../images/ioairflow/rates.png" alt="" style="height:200px;"></img><br><br>
+
+
+
+							<header class="major">
+								<h3>Air Exchange Rate Algorithm</h3>
 							</header>
+						<p>
+							The air exchange rate assessment was based on the methodology outlined by Batterman [1].
+							Batterman reviewed the method of using carbon dioxide as a natural tracer gas to determine 
+							ventilation rates specifically for the application to school classrooms. The general method is based on the analysis of a single well-mixed space as shown in Figure 1.
+							<br><img  class="w3-image" border-radius=100%; src="../images/ioairflow/zone.png" alt="" style="height:300px;"></img><br><br>
+							By applying a mass balance on the control volume in Figure 1 the mass balance model is generated.
+							
+							<h4>Decay Method</h4>
+							During periods of stepwise decrease in occupancy, exponential decay of indoor CO_2 concentration will be observed by sensors. The exponential decay was utilized to determine the air exchange rate in the space. The decay air exchange rate, A_D, for a single fully mixed zone can be determined using a sequence of CO_2 concentrations, C_t. 
+							During ioAirFlow tests, the CO_2 concentrations of the space, C_t, and the CO_2 concentrations of the supply air, C_R, are measured while the steady state concentration C_s is not explicitly known. With the decay method, this lack of information is acceptable since the concentration above the return air is being plotted with respect to time and the slope of the line is the only important parameter. The estimated steady state could be calculated based on the intercept of the lines. 
+							
+							<br><img  class="w3-image" border-radius=100%; src="../images/ioairflow/startup_decay.png" alt="" style="height:300px;"></img><br><br>
 
-							<p>
-							The quantitative comparison of generated meshes and the effects of meshing parameters through the mesh analyses is a key aspect investigated in this study. Using ANSYS meshing, three tetrahedral and three hexahedral grids were produced with varying levels of refinement. Using ICEM meshing, three levels of refinement were produced for a hexahedral mesh.
-							<br>
-							The independence of the grids was evaluated on two levels, local and global. Local velocity profiles at two locations were used to judge the grids ability to provide convergent results. The flow at sample line 1 is not too complex to ensure the grids can accurately solve the general flow while sample line 2 was used to study how the grid resolves more complex flow with recirculation. 
-							Hexahedral reference grid ~4 million nodes.
-							The global parameters used to evaluate convergence were the non-dimensional pressure drop and non-dimensional mass flow rate distribution between the branches. Furthermore, the order of convergence and grid convergence index (GCI) were determined for each grid set.
-	  
-							<br>
-							<img class="w3-image"  src="images/Undergrad_thesis/Hex_mesh.png", style = "width:40%;" alt="" />(a)
-							<img class="w3-image"  src="images/Undergrad_thesis/Tetra_mesh.png", style = "width:40%;" alt="" />(b)
-							<img class="w3-image"  src="images/Undergrad_thesis/Hex_icem.png", style = "width:40%;" alt="" />(c)
 
-							<figcaption style = "font-style: italic; ">Fig.3 - Local velocity profile of sample line 2 for the (a) ANSYS hexahedral, (b) ANSYS tetrahedral, and (c) ICEM hexahedral grids.</figcaption>
-							<br>
-							Concerning the global parameters, the variation in accuracy is attributed to the dependence the pressure drop has on the specific flow behaviour. Any variation in the turbulent zones and velocity will directly reduce the accuracy of the results.
-							Figure 4 shows the deviation of the velocity results between the hexahedral and tetrahedral grids.
+							Decay Air Exchange Rate Algorithm
+<pre><code>
+Initialize Start at beginning of natural log CO_2 concentration signal (ind_start).
+Initialize Set end index from delay value (ind_end).
+Initialize Linear regression score R^2 as 1 
+While there is more data in the signal to analyze do
+	Initialize start-up phase 
+	Initialize line has not been found
+	Fit the data sliced at the index start and end [ind_start: ind_end]
+	If the last value is equal to zero, a new line should start since a new line will always be made at zero.
+	If the linear regression score R^2 is greater than the previous step stop startup phase.
+	If startup phase is over do
+		If regression score  R^2 is less than the previous step, break the linear line at the previous step, associated with the greatest regression score. 
+		Return Line parameters and score.
+	If startup is not over do
+		Update ending index to include next point, current regression score as previous score. 
+	If the end index is greater than the size of the  signal do
+		break both loops
+</code></pre>
+							<h4>Build Up Method</h4>
+							Conversely, the air exchange rate can be determined using periods of increased CO_2 concentrations from a step-wise increase in occupancy. The build-up air exchange rate, A_B, for a single fully mixed zone can be determined using a sequence of CO_2 concentrations, C_t.
+							<br><img  class="w3-image" border-radius=100%; src="../images/ioairflow/build_up.png" alt="" style="height:200px;"></img><br><br>
 
-							<br>
-							<img class="w3-image"  src="images/Undergrad_thesis/Mesh_comp_better.png", style = "width: 80%;" alt="" />(c)
-							<figcaption style = "font-style: italic; ">Fig.4 - Velocity contour of combing flow in the bottom header from (left) hexahedral grid H3 and (right) tetrahedral grid T2.</figcaption>
+							BuildUp Air Exchange Rate Algorithm
 
-							<br>
-							<b style = "color: black; font-weight: 900; ">Mesh Analysis Results</b><br>
-							&emsp;&emsp;• The finest hexahedral grid showed the best results with non-dimensional pressure drop varying by only 0.86%. <br>
-							&emsp;&emsp;• Furthermore, the Hexahedral grid showed improved convergence behavior 𝑝=1.54,GCI= 2.7%.<br>
-							&emsp;&emsp;• The hexahedral grid was chosen to pursure further due to the advantage of better convergence behaviour and accuracy while not requiring a dramatic increase in computational resources. <br>
-							&emsp;&emsp;• ANSYS meshing was chosen due to its easy production of the unstructured hexahedral grid without a large time commitment of meshing at the cost of more difficult refinement.
+<pre><code>
+Find Indices of inflection points from concave up to down. 
+Set Start indices as inflection points and end indices as the next sequential inflection point.
+For each pair of start and end indices do
+	Fit exponential function to sliced data
+	Return function parameters
+Select the best parameters to be used as air exchange rate estimation. 
 
+</code></pre>
+
+							<h4>References</h4>
+							[1] Batterman, S., Zhang, L., & Wang, S. (2010). Ventilation rates in recently constructed U.S. school classrooms. Indoor air, 20(3), 246-257.
 						</p>
-						<header>
-							<h3>Parametric Study</h3>
-						</header>
-						<p>In the parametric study, the Reynolds number, number of branches and spacing was varied with the inlet diameter held constant. Furthermore, the width of the branches (10mm) and the length of the inlet and outlet portion (5D) are kept constant during each case.
-							The parametric study was conducted to determine the effects of the parameters on the non-dimensional pressure drop and the misdistribution of flow. <br>
-							
-							<br><b style = "color: black; font-weight: 900; ">Spacing Effects</b><br>
 
-							Increasing the spacing between branches resulted in:<br>
-							&emsp;&emsp;• ~5% increase pressure drop<br>
-							&emsp;&emsp;• ~ 30% decrease maldistribution<br>
-
-							<br><img class="w3-image"  src="images/Undergrad_thesis/Space.png", style = "width:90%;" alt="" /><br>
-							<figcaption style = "font-style: italic; ">Fig.5 - Velocity contour of increasing branch spacing from 0.5D to 1.5D.</figcaption>
-							<br>
-							<br><b style = "color: black; font-weight: 900; ">Number of Branches</b><br>
-							Increasing the number of branches resulted in:<br>
-							&emsp;&emsp;• ~ 62% decrease in pressure drop<br>
-							&emsp;&emsp;• ~ 71% increase in maldistribution<br>
-
-							<br><img class="w3-image"  src="images/Undergrad_thesis/Num.png", style = "width:50%;" alt="" /><br>
-							<figcaption style = "font-style: italic; ">Fig.6 - The non-dimensional mass flow rate through branches.</figcaption>
-
-							<br><b style = "color: black; font-weight: 900; ">Reynolds Number</b><br>
-							Increasing the Reynolds Number resulted in:<br>
-							&emsp;&emsp;• ~12% decrease in pressure drop<br>
-							&emsp;&emsp;• <1% change in maldistribution <br>
-							
-							
-							<br><img class="w3-image"  src="images/Undergrad_thesis/Rey.png", style = "width:90%;" alt="" /><br>
-							<figcaption style = "font-style: italic; ">Fig.7 -Velocity contour of increasing Reynolds Number from laminar (Re = 2000) to turbulent (Re= 10000).</figcaption>
+							<br><a href="../index.html#experience" class="button">Back</a>
 
 
-							<br>In conclusion, the CFD analysis provided a valuable tool to optimize the design of a branching flow
-							heat exchanger. The mesh analysis determined the optimal meshing approach that results in a reliable,
-							convergent, accurate, and efficient simulation for future studies in the growing field on heat exchanger
-							research. 
-							<br><br>
-
-
-							<br>
-							<a href="index.html" class="button">Back</a>
 
 					</section>
+
 
 				<!-- Four -->
 				<section id="four">
@@ -457,21 +479,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							<h5>Fit</h5>
 							<div class="box alt">
 								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+									<div class="col-12"><span class="image fit"><img src="../images/fulls/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/01.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/04.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/06.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/01.jpg" alt="" /></span></div>
 								</div>
 							</div>
 							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image left"><img src="../images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image right"><img src="../images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
 						</section>
 
 					</section>
@@ -486,16 +508,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
 					</ul>
+					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
