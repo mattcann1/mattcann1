@@ -12,90 +12,198 @@
 		  window.dataLayer = window.dataLayer || [];
 		  function gtag(){dataLayer.push(arguments);}
 		  gtag('js', new Date());
-
 		  gtag('config', 'G-LGLZDFL480');
 		</script>
-		
+
 		<title>Matthew Cann</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="icon" href="images/light-bulb.svg" type="image/x-icon">
+
+		<style>
+			/* ===== Tab Navigation ===== */
+			.tab-nav {
+				position: sticky;
+				top: 0;
+				background: rgba(255, 255, 255, 0.97);
+				backdrop-filter: blur(4px);
+				-webkit-backdrop-filter: blur(4px);
+				z-index: 100;
+				border-bottom: 2px solid #e4e4e4;
+				margin: 0 -4em 2.5em;
+				padding: 0 4em;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+			}
+			.tab-nav ul {
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				overflow-x: auto;
+				scrollbar-width: none;
+			}
+			.tab-nav ul::-webkit-scrollbar { display: none; }
+			.tab-nav li { margin: 0; padding: 0; flex-shrink: 0; }
+			.tab-nav a {
+				display: block;
+				padding: 0.9em 1.4em;
+				font-weight: 600;
+				font-size: 0.82em;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #999;
+				border-bottom: 3px solid transparent;
+				text-decoration: none;
+				transition: color 0.2s ease, border-color 0.2s ease;
+				white-space: nowrap;
+			}
+			.tab-nav a:hover { color: #49bf9d; }
+			.tab-nav a.active { color: #49bf9d; border-bottom-color: #49bf9d; }
+
+			/* ===== Tab Panels ===== */
+			.tab-panel { display: none; }
+			.tab-panel.active { display: block; }
+
+			/* ===== Override #main top padding so tabs sit near the top on load ===== */
+			@media screen and (min-width: 981px) {
+				#main { padding-top: 1.5em !important; }
+				.tab-nav { margin: 0 -4em 2em; padding: 0 4em; }
+			}
+			/* large breakpoint: #main padding shrinks to 3em horizontal */
+			@media screen and (max-width: 1280px) and (min-width: 981px) {
+				.tab-nav { margin: 0 -3em 2em; padding: 0 3em; }
+			}
+			/* medium: header moves to top, keep more top space */
+			@media screen and (max-width: 980px) and (min-width: 737px) {
+				#main { padding-top: 4em !important; }
+				.tab-nav { margin: 0 -4em 1.75em; padding: 0 4em; }
+			}
+			@media screen and (max-width: 736px) {
+				.tab-nav { margin: 0 -1.5em 1.5em; padding: 0 1.5em; }
+				.tab-nav a { padding: 0.7em 0.85em; font-size: 0.76em; letter-spacing: 0.06em; }
+				.exp-card { padding: 18px 16px 14px; }
+				.exp-logo { max-width: 120px; }
+			}
+
+			/* ===== Tighten section spacing inside panels ===== */
+			.tab-panel section { margin-top: 0; padding-top: 0; border-top: none; }
+			.tab-panel section + section {
+				margin-top: 2.5em;
+				padding-top: 2.5em;
+				border-top: solid 2px #efefef;
+			}
+			.tab-panel .major { margin-bottom: 1.5em; }
+			.tab-panel .major h2 { margin-bottom: 0.4em; }
+			/* Reduce blockquote vertical space */
+			.tab-panel blockquote { margin: 0.5em 0 1em; }
+			/* Tighten highlight cards row */
+			#highlights { padding: 20px !important; margin-bottom: 2em !important; }
+			#highlights h2 { margin-bottom: 16px !important; }
+			/* Tighten career timeline */
+			#career-timeline h2 { margin-bottom: 0.75em; }
+			/* Compact about-me paragraph spacing */
+			#one p { line-height: 1.6em; }
+			/* Tighter exp-card margins */
+			.exp-card { margin-bottom: 20px; }
+			/* Tighter project card grid row */
+			.tab-panel .row { margin-bottom: 0; }
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
-					<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
-						<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
-			</header>
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="images/headshot2.jpg" alt="" /></a>
+				<h1><strong style="font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the
+					intersection of
+					<b style="color:white; font-weight: 400;">Renewable
+						Energy</b> and 
+					<b style="color:white; font-weight: 400;">Machine
+						Learning</b>.<br /></h1>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
+		<div id="main">
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>About Me </h2>
+			<!-- Tab Navigation -->
+			<nav class="tab-nav" id="tab-nav" aria-label="Portfolio sections">
+				<ul>
+					<li><a href="#about"      class="tab-link active" data-tab="about">About</a></li>
+					<li><a href="#experience" class="tab-link"        data-tab="experience">Experience</a></li>
+					<li><a href="#projects"   class="tab-link"        data-tab="projects">Projects</a></li>
+					<li><a href="#skills"     class="tab-link"        data-tab="skills">Skills</a></li>
+					<li><a href="#research"   class="tab-link"        data-tab="research">Research</a></li>
+					<li><a href="#education"  class="tab-link"        data-tab="education">Education</a></li>
+				</ul>
+			</nav>
+
+
+			<!-- ========================================================== -->
+			<!--  ABOUT                                                       -->
+			<!-- ========================================================== -->
+			<div class="tab-panel active" id="tab-about">
+
+				<section id="one">
+					<header class="major">
+						<h2>About Me</h2>
 						<blockquote>
 							<p>"Data is the foundation of today and the promise of tomorrow."</p>
 						</blockquote>
-						</header>
-						<p style="font-size: 1.05em; line-height: 1.7em;">
-							Hi! My name is Matt, and I'm a passionate software developer specializing in <strong>Python infrastructure, testing automation, and data engineering</strong>. 
-							<br><br> 
-							With <strong>5+ years of experience</strong> spanning machine learning, software development, and renewable energy, I bring a unique blend of technical expertise and cross-disciplinary problem-solving. 
-							My background in mechanical engineering (MSc, University of Waterloo) has shaped my analytical approach to building scalable, high-performance software systems.
-							<br><br>
-							<strong>What I do:</strong>
-							<ul style="margin-top: 10px; margin-left: 20px;">
-								<li>Design and develop production Python packages with 20+ releases supporting mission-critical GNSS testing infrastructure</li>
-								<li>Architect database solutions managing millions of records with optimized performance</li>
-								<li>Pioneer quality engineering practices including mutation testing and CI/CD automation</li>
-								<li>Mentor teams on software development best practices, earning recognition through industry awards</li>
-							</ul>
-							<br>
-							My journey spans <strong>Software Development</strong>, <strong>Machine Learning</strong>, <strong>Renewable Energy</strong>, and <strong>Mechanical Engineering</strong> — 
-							all driven by endless curiosity and a commitment to solving complex technical challenges with elegant, data-driven solutions.
-							<br><br>
-							Explore my career timeline below to see the projects, innovations, and impact I've delivered across different domains.
-							<br>
-						</p>
-	
-					</section>
+					</header>
+					<p style="font-size: 1.05em; line-height: 1.7em;">
+						Hi! My name is Matt, and I'm a passionate software developer specializing in <strong>Python infrastructure, testing automation, and data engineering</strong>.
+						<br><br>
+						With <strong>5+ years of experience</strong> spanning machine learning, software development, and renewable energy, I bring a unique blend of technical expertise and cross-disciplinary problem-solving.
+						My background in mechanical engineering (MSc, University of Waterloo) has shaped my analytical approach to building scalable, high-performance software systems.
+						<br><br>
+						<strong>What I do:</strong>
+						<ul style="margin-top: 10px; margin-left: 20px;">
+							<li>Design and develop production Python packages with 20+ releases supporting mission-critical GNSS testing infrastructure</li>
+							<li>Architect database solutions managing millions of records with optimized performance</li>
+							<li>Pioneer quality engineering practices including mutation testing and CI/CD automation</li>
+							<li>Mentor teams on software development best practices, earning recognition through industry awards</li>
+						</ul>
+						<br>
+						My journey spans <strong>Software Development</strong>, <strong>Machine Learning</strong>, <strong>Renewable Energy</strong>, and <strong>Mechanical Engineering</strong> —
+						all driven by endless curiosity and a commitment to solving complex technical challenges with elegant, data-driven solutions.
+					</p>
+				</section>
 
-				<!-- Key Highlights -->
+				<!-- Career Highlights -->
 				<section id="highlights" style="background-color: #f7f7f7; padding: 30px; border-radius: 8px; margin-bottom: 40px;">
 					<h2 style="color: #49bf9d; margin-bottom: 25px;">Career Highlights</h2>
 					<div class="row">
-						<div class="col-3 col-6-medium col-12-small" style="text-align: center; margin-bottom: 20px;">
-							<div style="background: white; padding: 20px; border-radius: 8px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-								<h3 style="color: #49bf9d; font-size: 2.5em; margin-bottom: 10px;">20+</h3>
-								<p style="font-weight: 600; margin: 0;">Production Releases</p>
-								<p style="font-size: 0.9em; color: #666;">Critical infrastructure packages</p>
+						<div class="col-3 col-6-medium col-12-small" style="margin-bottom: 20px;">
+							<div class="highlight-card">
+								<h3>20+</h3>
+								<p class="label">Production Releases</p>
+								<p class="sublabel">Critical infrastructure packages</p>
 							</div>
 						</div>
-						<div class="col-3 col-6-medium col-12-small" style="text-align: center; margin-bottom: 20px;">
-							<div style="background: white; padding: 20px; border-radius: 8px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-								<h3 style="color: #49bf9d; font-size: 2.5em; margin-bottom: 10px;">96%</h3>
-								<p style="font-weight: 600; margin: 0;">Performance Gain</p>
-								<p style="font-size: 0.9em; color: #666;">File processing optimization</p>
+						<div class="col-3 col-6-medium col-12-small" style="margin-bottom: 20px;">
+							<div class="highlight-card">
+								<h3>96%</h3>
+								<p class="label">Performance Gain</p>
+								<p class="sublabel">File processing optimization</p>
 							</div>
 						</div>
-<!--						<div class="col-3 col-6-medium col-12-small" style="text-align: center; margin-bottom: 20px;">-->
-<!--							<div style="background: white; padding: 20px; border-radius: 8px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">-->
-<!--								<h3 style="color: #49bf9d; font-size: 2.5em; margin-bottom: 10px;">13.5M+</h3>-->
-<!--								<p style="font-weight: 600; margin: 0;">Records Managed</p>-->
-<!--								<p style="font-size: 0.9em; color: #666;">Database modernization</p>-->
-<!--							</div>-->
-<!--						</div>-->
-						<div class="col-3 col-6-medium col-12-small" style="text-align: center; margin-bottom: 20px;">
-							<div style="background: white; padding: 20px; border-radius: 8px; height: 100%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-								<h3 style="color: #49bf9d; font-size: 2.5em; margin-bottom: 10px;">🏆</h3>
-								<p style="font-weight: 600; margin: 0;">Hexagon Award</p>
-								<p style="font-size: 0.9em; color: #666;">Mentoring excellence</p>
+						<div class="col-3 col-6-medium col-12-small" style="margin-bottom: 20px;">
+							<div class="highlight-card">
+								<h3>🏆</h3>
+								<p class="label">Hexagon Award</p>
+								<p class="sublabel">Mentoring excellence</p>
+							</div>
+						</div>
+						<div class="col-3 col-6-medium col-12-small" style="margin-bottom: 20px;">
+							<div class="highlight-card">
+								<h3>2</h3>
+								<p class="label">Publications</p>
+								<p class="sublabel">Peer-reviewed research</p>
 							</div>
 						</div>
 					</div>
@@ -105,41 +213,414 @@
 				<section id="career-timeline">
 					<h2>Career Timeline</h2>
 					<table class="timeline">
-						<tr>
-							<td><strong>2023 - Present</strong></td>
-							<td><a href="hex.html">Software Developer </a> at
-								Hexagon A&P.</td>
-
+						<tr class="tl-hexagon tl-start">
+							<td><strong>Sep 2025 – Present</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Software Infrastructure Designer</a><span class="tl-tag tl-tag-hexagon">Hexagon | NovAtel</span></td>
 						</tr>
-						<tr>
-							<td><strong>2022 - 2023</strong></td>
-							<td><a href="etb.html">Software Developer </a>at Energy Toolbase.</td>
-
+						<tr class="tl-hexagon">
+							<td><strong>Jul 2024 – Sep 2025</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Intermediate Software Developer</a><span class="tl-tag tl-tag-hexagon">Hexagon | NovAtel</span></td>
 						</tr>
-						<tr>
-							<td><strong>2021</strong></td>
-							<td><a href="ioairflow.html">Data Science Researcher </a>at ioAirFlow.</td>
-
+						<tr class="tl-hexagon">
+							<td><strong>Jun 2023 – Jun 2024</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Software Developer</a><span class="tl-tag tl-tag-hexagon">Hexagon | NovAtel</span></td>
 						</tr>
-						<tr>
-							<td><strong>2019 - 2021</strong></td>
-							<td><a href="BWT.html">Bladeless Wind Turbine Researcher</a>, University of Waterloo, ON, Canada.</td>
+						<tr class="tl-etb tl-start">
+							<td><strong>Dec 2022 – Feb 2023</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Junior Software Developer</a><span class="tl-tag tl-tag-etb">Energy Toolbase</span></td>
+						</tr>
+						<tr class="tl-etb">
+							<td><strong>Feb 2022 – Nov 2022</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Software Developer Intern</a><span class="tl-tag tl-tag-etb">Energy Toolbase</span></td>
+						</tr>
+						<tr class="tl-ioairflow tl-start">
+							<td><strong>May 2021 – Aug 2021</strong></td>
+							<td><a href="#experience" class="tab-link" data-tab="experience">Data Science Researcher</a><span class="tl-tag tl-tag-ioairflow">ioAirFlow</span></td>
+						</tr>
+						<tr class="tl-uwaterloo tl-start">
+							<td><strong>2019 – 2021</strong></td>
+							<td><a href="#projects" class="tab-link" data-tab="projects">Bladeless Wind Turbine Researcher</a><span class="tl-tag tl-tag-uwaterloo">University of Waterloo</span></td>
 						</tr>
 					</table>
 				</section>
 
-				<!-- Skills -->
-				<section id="skills">
-					<h2>Technical Skills & Tools</h2>
-					<p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
-						Experienced across the full software development lifecycle with expertise in Python, testing frameworks, CI/CD automation, and data engineering.
+				<!-- Contact -->
+				<section id="contact" style="margin-top: 40px; padding-top: 40px; border-top: solid 2px #efefef;">
+					<h2>Get In Touch</h2>
+					<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+							matthewcameroncann@gmail.com
+						</li>
+					</ul>
+				</section>
+
+			</div><!-- end #tab-about -->
+
+
+			<!-- ========================================================== -->
+			<!--  EXPERIENCE                                                  -->
+			<!-- ========================================================== -->
+			<div class="tab-panel" id="tab-experience">
+
+				<section>
+					<header class="major">
+						<h2>Professional Experience</h2>
+					</header>
+					<p style="margin-bottom: 40px; color: #555; font-size: 1.05em;">
+						5+ years building production software systems across GNSS testing infrastructure, renewable energy SaaS, and IoT data platforms.
 					</p>
-					
+
+					<!-- Hexagon -->
+					<div class="exp-card">
+						<div class="row" style="align-items: flex-start;">
+							<div class="col-3 col-12-small" style="text-align: center; padding-top: 8px; margin-bottom: 15px;">
+								<img src="images/hex/HEXAGON_LOGO_TAGLINE_Standard_CMYK.jpg" alt="Hexagon" class="exp-logo" />
+							</div>
+							<div class="col-9 col-12-small">
+								<h3>Software Infrastructure Designer – Test
+									Infrastructure</h3>
+								<p class="company">Hexagon | NovAtel &nbsp;·&nbsp; Calgary, AB, Canada</p>
+								<p class="dates">June 2023 – Present</p>
+								<ul>
+									<li>Delivered <strong>20+ production Python package releases</strong> supporting mission-critical GNSS receiver testing infrastructure used globally</li>
+									<li>Achieved a <strong>96% reduction in file processing time</strong> through algorithmic optimization and a parallel processing architecture</li>
+									<li>Architected and migrated <strong>13.5M+ database records</strong> to a modernized time-series stack (TimescaleDB / QuestDB), significantly improving query performance</li>
+									<li>Pioneered <strong>mutation testing framework</strong> adoption across the team, growing meaningful test coverage from 48% to 100%</li>
+									<li>Designed CI/CD pipelines in GitLab CI and Jenkins with automated test gates ensuring zero-regression deployments</li>
+									<li>Recipient of the <strong>Hexagon Award</strong> for mentoring excellence — coached junior developers on software design patterns, testing practices, and code quality</li>
+								</ul>
+								<div class="tech-tags">
+									<span class="tech-tag">Python</span>
+									<span class="tech-tag">TimescaleDB</span>
+									<span class="tech-tag">QuestDB</span>
+									<span class="tech-tag">GitLab CI/CD</span>
+									<span class="tech-tag">Jenkins</span>
+									<span class="tech-tag">Docker</span>
+									<span class="tech-tag">Pytest</span>
+									<span class="tech-tag">FastAPI</span>
+									<span class="tech-tag">Redis</span>
+									<span class="tech-tag">AWS</span>
+									<span class="tech-tag">Grafana</span>
+								</div>
+								<a href="pages/hex.html" class="button small">View Full Details</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Energy Toolbase -->
+					<div class="exp-card">
+						<div class="row" style="align-items: flex-start;">
+							<div class="col-3 col-12-small" style="text-align: center; padding-top: 8px; margin-bottom: 15px;">
+								<img src="images/Energy_Toolbase_logo_file_high_res_.png" alt="Energy Toolbase" class="exp-logo" />
+							</div>
+							<div class="col-9 col-12-small">
+								<h3>Software Developer – Battery Storage Control Systems</h3>
+								<p class="company">Energy Toolbase &nbsp;·&nbsp; Calgary, AB, Canada</p>
+								<p class="dates">2022 – 2023</p>
+								<ul>
+									<li>Built <strong>Battman</strong>, a real-time strategy engine for commercial battery energy storage that selects among 15+ optimization strategies (demand shaving, time-of-use arbitrage, PV self-consumption, demand response) to minimize customer energy costs</li>
+									<li>Developed <strong>Meter Service</strong>, a pluggable data-aggregation layer normalizing telemetry from 5+ meter/inverter vendors into a single real-time stream consumed by forecasting, billing, and control systems</li>
+									<li>Integrated machine learning load and solar forecasting into the control loop, enabling predictive battery positioning ahead of demand peaks and utility rate transitions</li>
+									<li>Enforced end-to-end data integrity — schema validation, billing-aligned demand tracking, and energy-counter rollover handling — across a distributed edge platform with 99+ versioned production releases deployed via AWS IoT Greengrass</li>
+								</ul>
+								<div class="tech-tags">
+									<span class="tech-tag">Python</span>
+									<span class="tech-tag">FastAPI</span>
+									<span class="tech-tag">MQTT</span>
+									<span class="tech-tag">InfluxDB</span>
+									<span class="tech-tag">Redis</span>
+									<span class="tech-tag">AWS IoT Greengrass</span>
+									<span class="tech-tag">Docker</span>
+									<span class="tech-tag">scikit-learn</span>
+								</div>
+								<a href="pages/etb.html" class="button small">View Full Details</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- ioAirFlow -->
+					<div class="exp-card">
+						<div class="row" style="align-items: flex-start;">
+							<div class="col-3 col-12-small" style="text-align: center; padding-top: 8px; margin-bottom: 15px;">
+								<img src="images/ioAirFlow-logo.png" alt="ioAirFlow" class="exp-logo" />
+							</div>
+							<div class="col-9 col-12-small">
+								<h3>Data Science Researcher</h3>
+								<p class="company">ioAirFlow &nbsp;·&nbsp; Calgary, AB, Canada</p>
+								<p class="dates">May 2021 – Aug 2021</p>
+								<ul>
+									<li>Developed an <strong>IoT application for indoor air quality monitoring</strong> in commercial buildings, integrating sensor data from multiple building management systems</li>
+									<li>Applied <strong>machine learning models</strong> for HVAC energy setpoint optimization, reducing unnecessary energy consumption</li>
+									<li>Designed real-time data pipelines for ingestion and visualization of building sensor telemetry at scale</li>
+									<li>Improved energy management decision-making through predictive analytics and anomaly detection on time-series data</li>
+								</ul>
+								<div class="tech-tags">
+									<span class="tech-tag">Python</span>
+									<span class="tech-tag">Scikit-learn</span>
+									<span class="tech-tag">IoT / MQTT</span>
+									<span class="tech-tag">InfluxDB</span>
+									<span class="tech-tag">Pandas</span>
+									<span class="tech-tag">Time Series</span>
+								</div>
+								<a href="pages/ioairflow.html" class="button small">View Full Details</a>
+							</div>
+						</div>
+					</div>
+
+				</section>
+			</div><!-- end #tab-experience -->
+
+
+			<!-- ========================================================== -->
+			<!--  PROJECTS                                                    -->
+			<!-- ========================================================== -->
+			<div class="tab-panel" id="tab-projects">
+
+				<section>
+					<header class="major">
+						<h2>Projects</h2>
+					</header>
+					<p style="margin-bottom: 40px; color: #555; font-size: 1.05em;">
+						Academic research, engineering designs, and data science projects spanning renewable energy, computational fluid dynamics, machine learning, and space systems.
+					</p>
+
+					<div class="row">
+
+						<!-- FlightDeck: GNSS Hardware Test Console -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<div class="project-card-banner banner-flightdeck">
+									<i class="icon solid fa-satellite-dish"></i>
+								</div>
+								<div class="project-card-body">
+									<h3>FlightDeck — GNSS Hardware Test Console</h3>
+									<p class="project-meta">Full-Stack Internal Tool &nbsp;·&nbsp; Hexagon | NovAtel</p>
+									<p>Designed and built a full-stack browser-based console that replaced a fragile, per-device command-line workflow used to configure and operate GNSS receivers during hardware test campaigns. Sole developer across architecture, backend, frontend, hardware integration, and CI/CD — delivering real-time multi-port connection management, live telemetry, and one-click automated test sequences, packaged as a self-contained desktop app.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">Python</span>
+										<span class="tech-tag">FastAPI</span>
+										<span class="tech-tag">React</span>
+										<span class="tech-tag">TypeScript</span>
+										<span class="tech-tag">WebSocket</span>
+									</div>
+									<p style="color: #49bf9d; font-weight: 600; font-size: 0.85em; margin-bottom: 12px;">⚡ Replaced legacy CLI workflow across 8+ hardware test campaigns</p>
+									<a href="pages/flightdeck.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Decode Once: Local Database for GNSS Logs -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<div class="project-card-banner banner-decodeonce">
+									<i class="icon solid fa-database"></i>
+								</div>
+								<div class="project-card-body">
+									<h3>Decode Once — A Local Database for GNSS Logs</h3>
+									<p class="project-meta">Systems &amp; Data Engineering &nbsp;·&nbsp; Hexagon | NovAtel &nbsp;·&nbsp; Co-authored</p>
+									<p>Built a tool that converts multi-gigabyte GNSS receiver logs into a queryable local database in a single decoding pass, eliminating the repeated parsing overhead that every downstream analysis tool used to pay independently. Parallelized decoding and columnar compression turn a one-time conversion cost into instant, repeatable queries for every diagnostic question that follows.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">Python</span>
+										<span class="tech-tag">Apache Parquet</span>
+										<span class="tech-tag">Zstandard</span>
+										<span class="tech-tag">Parallel Processing</span>
+									</div>
+									<p style="color: #49bf9d; font-weight: 600; font-size: 0.85em; margin-bottom: 12px;">⚡ 98% faster diagnostics &nbsp;·&nbsp; 78% smaller storage footprint</p>
+									<a href="pages/decodeonce.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Footprint API: Geospatial ETL & FastAPI Service -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<div class="project-card-banner banner-footprint">
+									<i class="icon solid fa-map-marked-alt"></i>
+								</div>
+								<div class="project-card-body">
+									<h3>Footprint API — Geospatial ETL &amp; FastAPI Service</h3>
+									<p class="project-meta">Backend Engineering Technical Assessment &nbsp;·&nbsp; Planet Labs</p>
+									<p>Built an ETL pipeline and FastAPI service that transforms raw usage records with GeoJSON footprint geometries into heatmap-ready data backed by PostgreSQL. Containerized the full stack — database, ETL, API, and test suite — in Docker Compose, with a documented design covering complex-geometry handling, authentication, and a proposed CI/CD pipeline.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">Python</span>
+										<span class="tech-tag">FastAPI</span>
+										<span class="tech-tag">PostgreSQL</span>
+										<span class="tech-tag">SQLAlchemy</span>
+										<span class="tech-tag">GeoPandas</span>
+										<span class="tech-tag">Shapely</span>
+										<span class="tech-tag">Docker Compose</span>
+										<span class="tech-tag">Pytest</span>
+									</div>
+									<p style="color: #49bf9d; font-weight: 600; font-size: 0.85em; margin-bottom: 12px;">✨ 97% test coverage &nbsp;·&nbsp; 9.81/10 pylint score</p>
+									<a href="pages/footprint.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Bladeless Wind Turbine -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/loop_gif.gif" alt="Bladeless Wind Turbine vortex animation" />
+								<div class="project-card-body">
+									<h3>Bladeless Wind Turbine – Vortex-Induced Vibration Research</h3>
+									<p class="project-meta">Masters Thesis &nbsp;·&nbsp; University of Waterloo &nbsp;·&nbsp; 2019–2021</p>
+									<p>Developed a data-driven approach for generating vortex-shedding regime maps for oscillating cylinders, directly applicable to bladeless wind turbine design. Applied deep learning to classify fluid-structure interaction modes from CFD simulation data, resulting in two peer-reviewed publications.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">Python</span>
+										<span class="tech-tag">TensorFlow</span>
+										<span class="tech-tag">Keras</span>
+										<span class="tech-tag">CFD</span>
+										<span class="tech-tag">MATLAB</span>
+										<span class="tech-tag">Machine Learning</span>
+									</div>
+									<p style="color: #49bf9d; font-weight: 600; font-size: 0.85em; margin-bottom: 12px;">📄 2 Peer-Reviewed Publications</p>
+									<a href="pages/BWT.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Nozzle Sealing System -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/Nozzle.png" alt="Automated nozzle sealing system render" style="object-position: center top;" />
+								<div class="project-card-body">
+									<h3>Automated Nozzle Sealing System</h3>
+									<p class="project-meta">Capstone Design &nbsp;·&nbsp; Price Industries (Sponsor) &nbsp;·&nbsp; 2018–2019</p>
+									<p>Designed and prototyped an automated inspection system for HVAC nozzle seal integrity, replacing a manual quality-control process. Led mechanical design for a five-person interdisciplinary team through a full design-build-test cycle, delivering a working prototype for the industry sponsor.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">SolidWorks</span>
+										<span class="tech-tag">MATLAB</span>
+										<span class="tech-tag">Pneumatics</span>
+										<span class="tech-tag">Arduino</span>
+										<span class="tech-tag">Mechanical Design</span>
+									</div>
+									<a href="pages/capstone.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Feature Reduction ML -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/lda3.png" alt="LDA feature reduction visualization" />
+								<div class="project-card-body">
+									<h3>Feature Reduction for Human Activity Recognition</h3>
+									<p class="project-meta">Graduate Research &nbsp;·&nbsp; University of Waterloo &nbsp;·&nbsp; 2020</p>
+									<p>Benchmarked PCA, LDA, and a combined PCA+LDA pipeline for dimensionality reduction on a Human Activity Recognition dataset. The combined approach achieved the highest classification accuracy with a C4.5 Decision Tree, demonstrating that sequential linear reductions outperform either technique alone.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">Python</span>
+										<span class="tech-tag">Scikit-learn</span>
+										<span class="tech-tag">PCA</span>
+										<span class="tech-tag">LDA</span>
+										<span class="tech-tag">Decision Trees</span>
+										<span class="tech-tag">Pandas</span>
+									</div>
+									<a href="pages/Feature_red.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- CFD Heat Exchanger -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/Picture1 (2).png" alt="CFD heat exchanger flow visualization" />
+								<div class="project-card-body">
+									<h3>CFD Analysis of a Compact Heat Exchanger Distributor</h3>
+									<p class="project-meta">Undergraduate Thesis &nbsp;·&nbsp; University of Manitoba &nbsp;·&nbsp; 2018–2019</p>
+									<p>Performed computational fluid dynamics analysis of branching flow in a compact heat exchanger distributor using ANSYS Fluent. Investigated flow maldistribution and pressure-drop characteristics across multiple header geometries to guide design optimization for improved thermal performance.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">ANSYS Fluent</span>
+										<span class="tech-tag">CFD</span>
+										<span class="tech-tag">MATLAB</span>
+										<span class="tech-tag">Heat Transfer</span>
+										<span class="tech-tag">Fluid Mechanics</span>
+									</div>
+									<a href="pages/Undergrad_thesis.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Germany Thermal Model -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/Germany.PNG" alt="Outdoor pool thermal model results" />
+								<div class="project-card-body">
+									<h3>Dynamic Thermal Model for an Outdoor Swimming Pool</h3>
+									<p class="project-meta">International Research Exchange &nbsp;·&nbsp; University of Applied Sciences Ravensburg-Weingarten, Germany &nbsp;·&nbsp; 2018</p>
+									<p>Developed a dynamic thermal model in MATLAB/Simulink to predict the hourly temperature profile of an outdoor pool in Weingarten, Germany. The model accounted for solar radiation, evaporative cooling, convective heat loss, and ground conduction, achieving close agreement with measured data.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">MATLAB</span>
+										<span class="tech-tag">Simulink</span>
+										<span class="tech-tag">Thermal Modeling</span>
+										<span class="tech-tag">Heat Transfer</span>
+									</div>
+									<a href="pages/Germany_research.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Urban Wind Farms -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/Urban.jpg" alt="Urban wind farm aerial view" />
+								<div class="project-card-body">
+									<h3>Implementation of Urban Wind Farms in Winnipeg</h3>
+									<p class="project-meta">Graduate Research &nbsp;·&nbsp; University of Waterloo &nbsp;·&nbsp; 2020</p>
+									<p>Conducted a feasibility study for deploying small-scale urban wind turbines across Winnipeg, MB. Analyzed wind resource data, zoning regulations, and economic viability to identify optimal deployment sites and turbine configurations for maximizing energy yield within urban constraints.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">GIS</span>
+										<span class="tech-tag">MATLAB</span>
+										<span class="tech-tag">Wind Resource Analysis</span>
+										<span class="tech-tag">Energy Systems</span>
+									</div>
+									<a href="pages/Urban_wind.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- UMSATS Communications -->
+						<div class="col-6 col-12-small">
+							<div class="project-card">
+								<img class="project-card-img" src="images/Comms.JPG" alt="UMSATS communications hardware" />
+								<div class="project-card-body">
+									<h3>Satellite Communications Deployment</h3>
+									<p class="project-meta">Mechanical Team Communication Lead &nbsp;·&nbsp; UMSATS &nbsp;·&nbsp; 2016–2019</p>
+									<p>Led deployment of the communication subsystem for the University of Manitoba Space Applications and Technology Society's student satellite project. Integrated RF hardware, managed inter-subsystem protocols, and coordinated the mechanical team's communication interfaces throughout the project lifecycle.</p>
+									<div class="tech-tags">
+										<span class="tech-tag">RF Systems</span>
+										<span class="tech-tag">Embedded Systems</span>
+										<span class="tech-tag">Linux</span>
+										<span class="tech-tag">Communication Protocols</span>
+									</div>
+									<a href="pages/UMSATS.html" class="button small">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+					</div><!-- end .row -->
+				</section>
+			</div><!-- end #tab-projects -->
+
+
+			<!-- ========================================================== -->
+			<!--  SKILLS                                                      -->
+			<!-- ========================================================== -->
+			<div class="tab-panel" id="tab-skills">
+
+				<section id="skills">
+					<header class="major">
+						<h2>Technical Skills &amp; Tools</h2>
+					</header>
+					<p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
+						Experienced across the full software development lifecycle with deep expertise in Python, testing frameworks, CI/CD automation, and data engineering.
+					</p>
+
 					<!-- Visual Skills Icons -->
 					<div style="margin-bottom: 40px;">
 						<h3 style="color: #49bf9d; margin-bottom: 20px;">Core Technologies</h3>
 						<div class="row" style="text-align: center;">
-							<!-- Programming Languages -->
 							<div class="col-2 col-4-small" style="margin-bottom: 25px;">
 								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width: 60px; height: 60px;"/>
 								<p style="margin-top: 8px; font-weight: 600; font-size: 0.9em;">Python</p>
@@ -167,7 +648,6 @@
 						</div>
 
 						<div class="row" style="text-align: center;">
-							<!-- DevOps & CI/CD -->
 							<div class="col-2 col-4-small" style="margin-bottom: 25px;">
 								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab" style="width: 60px; height: 60px;"/>
 								<p style="margin-top: 8px; font-weight: 600; font-size: 0.9em;">GitLab CI/CD</p>
@@ -195,7 +675,6 @@
 						</div>
 
 						<div class="row" style="text-align: center;">
-							<!-- ML/AI Tools -->
 							<div class="col-2 col-4-small" style="margin-bottom: 25px;">
 								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" style="width: 60px; height: 60px;"/>
 								<p style="margin-top: 8px; font-weight: 600; font-size: 0.9em;">TensorFlow</p>
@@ -230,20 +709,20 @@
 							<div class="col-6 col-12-small">
 								<table>
 									<tr>
-										<td><strong>Languages & Core</strong></td>
-										<td>Python (Expert), SQL, Bash/Shell Scripting</td>
+										<td><strong>Languages &amp; Core</strong></td>
+										<td>Python (Expert), SQL, Bash / Shell Scripting</td>
 									</tr>
 									<tr>
 										<td><strong>Databases</strong></td>
 										<td>QuestDB, TimescaleDB, PostgreSQL, MongoDB, ElasticSearch, InfluxDB, Redis</td>
 									</tr>
 									<tr>
-										<td><strong>Testing & Quality</strong></td>
-										<td>Pytest, Mutation Testing, Unit/Integration Testing, SonarCube, Code Coverage Analysis</td>
+										<td><strong>Testing &amp; Quality</strong></td>
+										<td>Pytest, Mutation Testing, Unit / Integration Testing, SonarQube, Code Coverage Analysis</td>
 									</tr>
 									<tr>
-										<td><strong>CI/CD & DevOps</strong></td>
-										<td>GitLab CI/CD, Jenkins, GitHub Actions, Circle CI, Pipeline Design</td>
+										<td><strong>CI/CD &amp; DevOps</strong></td>
+										<td>GitLab CI/CD, Jenkins, GitHub Actions, CircleCI, Pipeline Design</td>
 									</tr>
 									<tr>
 										<td><strong>Containerization</strong></td>
@@ -254,15 +733,15 @@
 							<div class="col-6 col-12-small">
 								<table>
 									<tr>
-										<td><strong>Cloud & Infrastructure</strong></td>
+										<td><strong>Cloud &amp; Infrastructure</strong></td>
 										<td>Amazon Web Services (AWS), Linux Systems</td>
 									</tr>
 									<tr>
-										<td><strong>API & Web Services</strong></td>
+										<td><strong>API &amp; Web Services</strong></td>
 										<td>FastAPI, RESTful APIs, HTTP/HTTPS protocols, asyncio</td>
 									</tr>
 									<tr>
-										<td><strong>ML/AI Frameworks</strong></td>
+										<td><strong>ML / AI Frameworks</strong></td>
 										<td>TensorFlow, PyTorch, Keras, OpenCV, Scikit-learn</td>
 									</tr>
 									<tr>
@@ -278,136 +757,21 @@
 						</div>
 					</div>
 				</section>
+			</div><!-- end #tab-skills -->
 
-				<!-- Two -->
-					<section id="two">
-						<h1>Experience</h1>
-					    <div class="column"></div>
-							<div class="row">
-									<article class="col-6 col-12-xsmall work-item">
-									<img src="images/hex/HEXAGON_LOGO_TAGLINE_Standard_CMYK.jpg" alt=""
-										 style="width:120%;padding: 100px 5px
-										  10px 0px;" /></img>
-									<h3>Software Developer - Test Infrastructure</h3>
-									<p><strong>Hexagon | NovAtel</strong> Calgary, AB, Canada<br>
-									<em>January 2023 - December 2025</em><br><br>
-									🚀 Delivered 20+ production Python package releases<br>
-									⚡ Achieved 96% performance improvement through optimization<br>
-									🏆 Hexagon Award recipient for mentoring excellence<br>
-									📊 Architected database solutions for 13.5M+ records
-									</p>
-								</b>
-								<br>
-								<a href="hex.html" class="button">View Full Details</a>
 
-								</article>
-								<article class="col-6 col-12-xsmall work-item">
-									<img src="images/Energy_Toolbase_logo_file_high_res_.png" alt="" style="width:100%;padding: 100px 5px 10px 20px;" /></img>
-									<h3>Software Developer</h3>
-									<p><strong>Energy Toolbase</strong> Calgary, AB, Canada<br>
-									<em>2022 - 2023</em><br><br>
-									☀️ Developed renewable energy software solutions<br>
-									🔌 Built data-driven energy optimization tools<br>
-									⚙️ Enhanced CI/CD pipelines and testing frameworks
-									</p>
-								</b>
-								<br>
-								<a href="etb.html" class="button">View Full Details</a>
+			<!-- ========================================================== -->
+			<!--  RESEARCH                                                    -->
+			<!-- ========================================================== -->
+			<div class="tab-panel" id="tab-research">
 
-								</article>
-
-								<article class="col-6 col-12-xsmall work-item">
-									<img src="images/ioAirFlow-logo.png" alt="" style="width:80%;" /></img>
-									<h3>Data Science Researcher</h3>
-									<p><strong>ioAirFlow</strong> Calgary, AB, Canada<br>
-									<em>2021</em><br><br>
-									🏢 Developed IoT application for indoor air quality monitoring<br>
-									🤖 Applied machine learning for energy setpoint optimization<br>
-									📈 Improved commercial building energy management systems
-									</p>
-								</b>
-								<br>
-								<a href="ioairflow.html" class="button">View Full Details</a>
-
-								</article>
-							<br>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "border-radius=100%; src="images/loop_gif.gif" alt="" style="width:75%;" /></img>
-								<h3>Bladeless Wind Turbine Researcher</h3>
-								<p>Masters degree thesis project at the University of Waterloo, ON, Canada. <br></p>
-								</b>
-								<br>
-								<a href="BWT.html" class="button">Learn more</a>
-
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img  class="image fit "><img src="images/Nozzle.png" alt="" style="width:60% ;margin-top: -50px;"/></img>
-								<h3>Design of an Automated Nozzle Sealing System</h3>
-								<p>Capstone design project sponsored by Price Industries. Winnipeg, MB, Canada</p>
-								<br>
-
-								<a href="capstone.html" class="button">Learn more</a>
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "><img src="images/Germany.PNG" alt="" style="width:100%;" /></img>
-								<h3>Dynamic thermal model using MATLAB/ Simulink for an outdoor swimming pool in Weingarten, Germany.</h3>
-								<p>Undergraduate Researcher University of Applied Sciences Ravensburg-Weingarten, Germany.</p>
-								<br>
-								<a href="Germany_research.html" class="button">Learn more</a>
-
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "><img src="images/Picture1 (2).png" alt="" style="width:100%;" /></img>
-								<p><br></p>
-								<h3>CFD Analysis of Branching Flow in a Compact Heat Exchanger Distributor</h3>
-								<p>Undergraduate thesis. Winnipeg, MB, Canada.</p>
-								<br>
-								<a href="Undergrad_thesis.html" class="button">Learn more</a>
-
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "><img src="images/Comms.JPG" alt="" style="width:105%;" /></img>
-								<h3>Mechanical Team Communication Deployment Lead </h3>
-								<p>University of Manitoba Space Applications and Technolgy Society.</p>
-								<br>
-								<a href="UMSATS.html" class="button">Learn more</a>
-
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "><img src="images/Urban.jpg" alt="" style="width:110%;" /></img>
-								<h3>Implementation of Urban Wind Farms in Winnipeg, MB, Canada </h3>
-								<p>University of Waterloo.</p>
-								<br>
-								<a href="Urban_wind.html" class="button">Learn more</a>
-
-							</article>
-
-							<article class="col-6 col-12-xsmall work-item">
-								<img class="image fit "><img src="images/lda3.png" alt="" style="width:100%;" /></img>
-								<h3>Feature Reduction using PCA, LDA, AND PCA+LDA to Improve Decision Tree C4.5 Classification of Human
-									Activity Recognition Dataset</h3>
-								<p>University of Waterloo.</p>
-								<br>
-								<a href="Feature_red.html" class="button">Learn more</a>
-
-							</article>
-
-						</div>
-
-					</section>
-
-				<!-- Publications -->
 				<section id="publications">
-					<h1>Publications & Research</h1>
+					<header class="major">
+						<h2>Publications &amp; Research</h2>
+					</header>
 					<p style="margin-bottom: 30px; font-size: 1.05em; color: #555;">
 						Peer-reviewed publications from my Master's research in Mechanical Engineering at the University of Waterloo,
-						focusing on renewable energy and computational fluid dynamics.
+						focusing on renewable energy systems and computational fluid dynamics.
 					</p>
 
 					<div style="background-color: #f7f7f7; padding: 25px; border-radius: 8px; margin-bottom: 20px;">
@@ -415,8 +779,6 @@
 							<i class="icon solid fa-file-alt"></i>
 							Journal Publications
 						</h4>
-
-						<!-- Publication 1 - Add your publication details here -->
 						<div style="background: white; padding: 20px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #49bf9d;">
 							<p style="margin: 0; font-weight: 600; font-size: 1.05em; line-height: 1.6em;">
 								A Data-Driven Approach for Generating Vortex-Shedding Regime Maps for an Oscillating Cylinder
@@ -425,16 +787,12 @@
 								<strong>Authors:</strong> Matthew Cann, Ryley McConkey, Fue-Sang Lien, William Melek and Eugene Yee
 							</p>
 							<p style="margin: 5px 0; color: #666;">
-								<strong>Journal:</strong> Energies, Volume
-								16, Issue 11, 2023
+								<strong>Journal:</strong> Energies, Volume 16, Issue 11, 2023
 							</p>
 							<p style="margin: 10px 0 0 0;">
-								<a href="https://doi.org/10.3390/en16114440" target="_blank" class="button small icon solid fa-external-link-alt">
-									View Publication
-								</a>
+								<a href="https://doi.org/10.3390/en16114440" target="_blank" class="button small icon solid fa-external-link-alt">View Publication</a>
 							</p>
 						</div>
-
 					</div>
 
 					<div style="background-color: #f7f7f7; padding: 25px; border-radius: 8px;">
@@ -442,8 +800,6 @@
 							<i class="icon solid fa-users"></i>
 							Conference Proceedings
 						</h4>
-
-						<!-- Conference Paper 1 -->
 						<div style="background: white; padding: 20px; border-radius: 5px; margin-bottom: 15px; border-left: 4px solid #49bf9d;">
 							<p style="margin: 0; font-weight: 600; font-size: 1.05em; line-height: 1.6em;">
 								Mode classification for vortex shedding from an oscillating wind turbine using machine learning
@@ -452,20 +808,13 @@
 								<strong>Authors:</strong> Matthew Cann, Ryley McConkey, Fue-Sang Lien, William Melek and Eugene Yee
 							</p>
 							<p style="margin: 5px 0; color: #666;">
-								<strong>Conference:</strong> Journal of
-								Physics Conference Series, Shanghai, China, 2021
+								<strong>Conference:</strong> Journal of Physics Conference Series, Shanghai, China, 2021
 							</p>
 							<p style="margin: 10px 0 0 0;">
-								<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2141/1/012009" target="_blank" class="button small icon solid fa-external-link-alt">
-									View Paper
-								</a>
-								<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2141/1/012009/pdf" target="_blank" class="button small icon solid fa-file-pdf" style="margin-left: 10px;">
-									Download PDF
-								</a>
+								<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2141/1/012009" target="_blank" class="button small icon solid fa-external-link-alt">View Paper</a>
+								<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2141/1/012009/pdf" target="_blank" class="button small icon solid fa-file-pdf" style="margin-left: 10px;">Download PDF</a>
 							</p>
 						</div>
-
-						<!-- Add more conference papers as needed -->
 					</div>
 
 					<div style="margin-top: 25px; padding: 20px; background: #e8f5f1; border-radius: 8px;">
@@ -474,426 +823,149 @@
 							Computational Fluid Dynamics (CFD), Vortex-Induced Vibration, Machine Learning for Energy Optimization
 						</p>
 					</div>
-
 				</section>
-
-				<!-- Two -->
-				<section id="two">
-					<h1>Leadership</h1>
-					<div class="row">
-						<article class="col-6 col-12-xsmall work-item">
-							<img class="image fit "border-radius=100%; src="images/phil.png" alt="" style="width:75%;" /></img>
-							<h3>Director of Professional Relations</h3>
-							<p>University of Manitoba Engineering Society. </p>
-							<br><a href="PR_v2.html" class="button">Learn more</a>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img  class="image fit "><img src="images/UMSATS_Patch.png" alt="" style="width:50%;margin-top: -40px;"/></img>
-							<h3>Executive Member - Program Manager</h3>
-							<p>University of Manitoba Space Applications and Technolgy Society.</p>
-							<br>
-							<a href="UMSATS_exec.html" class="button">Learn more</a>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img  class="image fit "><img src="images/tim_hortons_logo (2).jpg" alt="" style="width:70%;"/></img>
-							<h3>Supervisor</h3>
-							<p>2012-2018<br>
-								&emsp;&emsp;• Lead by example and demonstrated the importance of treating every team member and guest with respect.<br>
-								&emsp;&emsp;• Assisted the Restaurant Owner in recruitment and retention strategies.<br>
-								&emsp;&emsp;• Trained, orientated, and monitored new team members.<br>
-								&emsp;&emsp;• Created new games to maximize performance, strengthen team moral, and reduce drive thru times.<br></p>
-							<br>
-						</article>
-						<article class="col-6 col-12-xsmall work-item">
-							<img  class="image fit "><img src="images/TB.png" alt="" style="width:70%;"/></img><br>
-							<h3>Mentor/Tutor</h3>
-							<p>2016-2018<br>
-								&emsp;&emsp;• Mentored highschool and univeristy students to improve performance in class and promote a philosophy of life long learning.<br>
-							<br>
-						</article>
+			</div><!-- end #tab-research -->
 
 
-					</div>
+			<!-- ========================================================== -->
+			<!--  EDUCATION                                                   -->
+			<!-- ========================================================== -->
+			<div class="tab-panel" id="tab-education">
 
-				</section>
-
-				<!-- Three -->
 				<section id="three">
 					<header class="major">
-						<h1>Education </h1>
+						<h2>Education</h2>
 					</header>
-					<p> <b style = "color: black; font-weight: 900; "> Master of Science in Mechanical Engineering | University of Waterloo, Waterloo, ON </b> <a  class="image avatar"><img src="images/uofw.png", style = "width:200px;height:50px;position: relative; left: 40px; bottom: -20px;" alt="" /></a>
-						<br>
-						&emsp;&emsp; Expected 2021<br>
-						&emsp;&emsp; Supervisors: <a href="https://uwaterloo.ca/mechanical-mechatronics-engineering/profile/fslien">Fue Sang Lien</a> & <a href = "https://uwaterloo.ca/mechanical-mechatronics-engineering/profile/wmelek">William Melek</a><br>
 
-						<b style = "color: black; font-weight: 900; ">Bachelor of Science in Mechanical Engineering | University of Manitoba, Winnipeg, MB</b><a  class="image avatar"><img src="images/uofm.jpg", style = "width:175px;height:75px;position: relative; left: 30px; bottom: -20px;" alt="" /></a> <br>
-						&emsp;&emsp;Graduation with Distinction 2019<br>
-						&emsp;&emsp;Deans Honour List 2014-2019 (Final Year - GPA: 4.28/4.5)<br>	
-						
-						</p>
-
-				</section>
-
-
-
-				<!-- Four -->
-					<section id="four">
-						<h1>Get In Touch</h1>
-						<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
-
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										matthewcameroncann@gmail.com
-									</li>
-
+					<div class="exp-card">
+						<div class="row" style="align-items: center;">
+							<div class="col-9 col-12-small">
+								<h3 style="margin-top: 0;">Master of Science – Mechanical Engineering</h3>
+								<p class="company">University of Waterloo &nbsp;·&nbsp; Waterloo, ON, Canada</p>
+								<p class="dates">2019 – 2021</p>
+								<ul>
+									<li>Thesis: Vortex-induced vibration and machine learning applied to bladeless wind turbine design</li>
+									<li>Supervisors: <a href="https://uwaterloo.ca/mechanical-mechatronics-engineering/profile/fslien">Fue Sang Lien</a> &amp; <a href="https://uwaterloo.ca/mechanical-mechatronics-engineering/profile/wmelek">William Melek</a></li>
+									<li>Published 2 peer-reviewed research papers in renewable energy and machine learning</li>
 								</ul>
 							</div>
+							<div class="col-3 col-12-small" style="text-align: center; margin-top: 15px;">
+								<img src="images/uofw.png" style="width: 150px; max-width: 100%;" alt="University of Waterloo" />
+							</div>
 						</div>
-					</section>
+					</div>
 
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
-
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
-
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
+					<div class="exp-card">
+						<div class="row" style="align-items: center;">
+							<div class="col-9 col-12-small">
+								<h3 style="margin-top: 0;">Bachelor of Science – Mechanical Engineering</h3>
+								<p class="company">University of Manitoba &nbsp;·&nbsp; Winnipeg, MB, Canada</p>
+								<p class="dates">2014 – 2019</p>
+								<ul>
+									<li>Graduation with Distinction</li>
+									<li>Dean's Honour List 2014–2019</li>
+									<li>Final Year GPA: 4.28 / 4.5</li>
+									<li>International exchange semester – University of Applied Sciences, Weingarten, Germany (2018)</li>
+								</ul>
 							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
+							<div class="col-3 col-12-small" style="text-align: center; margin-top: 15px;">
+								<img src="images/uofm.jpg" style="width: 130px; max-width: 100%;" alt="University of Manitoba" />
 							</div>
-						</section>
+						</div>
+					</div>
+				</section>
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+				<!-- Leadership -->
+				<section id="leadership" style="margin-top: 40px; padding-top: 40px; border-top: solid 2px #efefef;">
+					<header class="major">
+						<h2>Leadership &amp; Extracurriculars</h2>
+					</header>
+					<div class="row">
+						<article class="col-6 col-12-xsmall work-item">
+							<img class="image fit" src="images/phil.png" alt="" style="width:75%;" />
+							<h3>Director of Professional Relations</h3>
+							<p>University of Manitoba Engineering Society</p>
+							<br><a href="pages/PR_v2.html" class="button small">Learn More</a>
+						</article>
+						<article class="col-6 col-12-xsmall work-item">
+							<img src="images/UMSATS_Patch.png" alt="" style="width:50%; margin-top: -40px;" />
+							<h3>Executive Member – Program Manager</h3>
+							<p>University of Manitoba Space Applications and Technology Society</p>
+							<br><a href="pages/UMSATS_exec.html" class="button small">Learn More</a>
+						</article>
+						<article class="col-6 col-12-xsmall work-item">
+							<img src="images/tim_hortons_logo (2).jpg" alt="" style="width:70%;" />
+							<h3>Supervisor</h3>
+							<p>Tim Hortons &nbsp;·&nbsp; 2012–2018<br>
+								Led team operations, trained new members, and improved drive-thru performance through process innovation and team engagement initiatives.</p>
+						</article>
+						<article class="col-6 col-12-xsmall work-item">
+							<img src="images/TB.png" alt="" style="width:70%;" />
+							<h3>Mentor / Tutor</h3>
+							<p>2016–2018<br>
+								Mentored high school and university students to strengthen academic performance and foster a philosophy of lifelong learning.</p>
+						</article>
+					</div>
+				</section>
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+			</div><!-- end #tab-education -->
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
-
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
-
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
-
-					</section>
-				-->
-
-			</div>
+		</div><!-- end #main -->
 
 		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
-					</ul>
-					<ul class="copyright">
-					</ul>
-				</div>
-			</footer>
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				</ul>
+				<ul class="copyright"></ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Tab Navigation -->
+		<script>
+			(function () {
+				var tabLinks  = document.querySelectorAll('.tab-link');
+				var tabPanels = document.querySelectorAll('.tab-panel');
+				var validTabs = ['about', 'experience', 'projects', 'skills', 'research', 'education'];
+
+				function showTab(name) {
+					if (validTabs.indexOf(name) === -1) name = 'about';
+					tabLinks.forEach(function (link) {
+						link.classList.toggle('active', link.dataset.tab === name);
+					});
+					tabPanels.forEach(function (panel) {
+						panel.classList.toggle('active', panel.id === 'tab-' + name);
+					});
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				}
+
+				tabLinks.forEach(function (link) {
+					link.addEventListener('click', function (e) {
+						e.preventDefault();
+						var name = this.dataset.tab;
+						showTab(name);
+						history.pushState(null, '', '#' + name);
+					});
+				});
+
+				// Honour URL hash on load and on browser back/forward
+				function hashTab() {
+					return window.location.hash.replace('#', '') || 'about';
+				}
+				showTab(hashTab());
+				window.addEventListener('popstate', function () { showTab(hashTab()); });
+			})();
+		</script>
 
 	</body>
 </html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matthew Cann</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+				<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
+		</header>
+
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Decode Once — A Local Database for GNSS Logs</h2>
+						</header>
+						<p>
+							<br>
+							<img class="w3-image"><img src="../images/hex/HEXAGON_LOGO_TAGLINE_Standard_CMYK.jpg",
+													   style = "width:50%;position: relative; bottom: 40px;padding-bottom: 10px;" alt="" /><br>
+							<b style = "color: black; font-weight: 900; ">Hexagon | NovAtel &nbsp;·&nbsp; Co-Authored Technical Publication</b>
+							<br>
+
+							<div class="tech-tags">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">Apache Parquet</span>
+								<span class="tech-tag">Zstandard</span>
+								<span class="tech-tag">Parallel Processing</span>
+								<span class="tech-tag">pandas</span>
+								<span class="tech-tag">Technical Writing</span>
+							</div>
+
+							<div class="impact-box">
+								<p>
+									Every tool that touches a raw NovAtel GNSS receiver log has to decode it first — and historically, every tool paid that cost independently,
+									re-parsing the same file from byte one. I co-authored a technical publication and built the underlying tool that eliminates this "decode tax":
+									a local database layer that decodes a receiver log once, in a single pass, and serves every downstream question from a fast, structured store instead of
+									a repeated full-file re-read.
+								</p>
+							</div>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Key Accomplishments</h3>
+
+							<h4 style="margin-top: 20px;">🛠️ Conversion Pipeline</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Designed a single-pass pipeline that decodes a raw GNSS receiver log into a compressed, columnar local database, parallelizing the decode across CPU workers for large multi-gigabyte files</li>
+								<li>Built a self-describing database format that preserves nested and variable-length message structures without flattening or data loss, verified byte-for-byte against the source log</li>
+								<li>Tuned column-level compression to balance storage footprint against conversion throughput across both ASCII and binary log formats</li>
+							</ul>
+							<div class="screenshot-gallery single">
+								<figure>
+									<img src="../images/decodeonce/parallel-write-pipeline.png" alt="gnsspq-convert parallel write pipeline: a GPS recording split into EDIE-frame-aligned chunks, decoded across CPU workers, then merged into a single Parquet file" />
+									<figcaption>gnsspq-convert's parallel write pipeline: chunk boundaries align to EDIE frame boundaries so each CPU worker can decode and write independently before a final merge.</figcaption>
+								</figure>
+							</div>
+
+							<h4 style="margin-top: 20px;">🔎 Query Layer</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Built a Python reader interface that returns any decoded message type as a ready-to-use DataFrame, removing the need for analysis code to understand the receiver's binary/ASCII protocol at all</li>
+								<li>Supported filtered, cross-message-type queries — for example, joining position data with signal-strength observations over a specific time window — without re-parsing the source file</li>
+							</ul>
+							<div class="screenshot-gallery single">
+								<figure>
+									<img src="../images/decodeonce/shared-vs-per-tool-decode.png" alt="Comparison of per-tool decode, where each tool re-parses the GPS file, versus shared decode, where one parse produces pre-converted data read by every tool" />
+									<figcaption>Per-tool decode vs. shared decode: instead of every downstream tool re-parsing the same log, one shared pass produces pre-converted data that all tools read from.</figcaption>
+								</figure>
+							</div>
+
+							<h4 style="margin-top: 20px;">📈 Adoption &amp; Impact</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Deployed internally to accelerate existing diagnostic tools used by the receiver engineering team, cutting chained tool runtimes by sharing one decoded pass instead of repeating it per tool</li>
+								<li>Co-authored a technical publication detailing the design, performance benchmarks, and a real-world diagnostic case study</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Quantifiable Impact</h3>
+							<ul style="line-height: 1.8em;">
+								<li>⚡ <strong>83% faster conversion</strong> via parallelized decoding compared to a single-threaded converter</li>
+								<li>💾 <strong>78% smaller storage footprint</strong> after columnar compression on ASCII-format logs</li>
+								<li>🎯 <strong>98% reduction</strong> in time-to-answer for repeated diagnostic queries against the same log</li>
+								<li>🔗 <strong>62.7% reduction</strong> in combined runtime when chaining existing internal tools against the same recording</li>
+							</ul>
+							<div class="screenshot-gallery single">
+								<figure>
+									<img src="../images/decodeonce/speedup-chart.png" alt="Bar chart comparing legacy per-tool runtime against gnsspq runtime for spacingcli, plotlogcli, and a chained pipeline, showing 4.3x, 1.9x, and 2.7x speedups respectively" />
+									<figcaption>Benchmarked speedups from sharing one decoded pass: 4.3× for spacingcli, 1.9× for plotlogcli, and 2.7× for the chained pipeline.</figcaption>
+								</figure>
+							</div>
+
+							<br><a href="../index.html#projects" class="button">Back</a>
+
+					</section>
+
+
+				<!-- Four -->
+				<section id="four">
+					<h2>Get In Touch</h2>
+					<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
+
+						<div class="col-4 col-12-small">
+							<ul class="labeled-icons">
+								<li>
+									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+									matthewcameroncann@gmail.com
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+					</ul>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Lightbox overlay for screenshot gallery -->
+		<div class="lightbox-overlay" id="lightbox-overlay">
+			<img id="lightbox-overlay-img" src="" alt="" />
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				(function () {
+					var overlay = document.getElementById('lightbox-overlay');
+					var overlayImg = document.getElementById('lightbox-overlay-img');
+
+					document.querySelectorAll('.screenshot-gallery img').forEach(function (img) {
+						img.addEventListener('click', function () {
+							overlayImg.src = img.src;
+							overlayImg.alt = img.alt;
+							overlay.classList.add('is-visible');
+						});
+					});
+
+					overlay.addEventListener('click', function () {
+						overlay.classList.remove('is-visible');
+						overlayImg.src = '';
+					});
+
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') {
+							overlay.classList.remove('is-visible');
+							overlayImg.src = '';
+						}
+					});
+				})();
+			</script>
+
+	</body>
+</html>

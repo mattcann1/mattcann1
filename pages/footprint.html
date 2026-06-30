@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matthew Cann</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+				<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
+		</header>
+
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Footprint API — Geospatial ETL &amp; FastAPI Service</h2>
+						</header>
+						<p>
+							<br>
+							<b style = "color: black; font-weight: 900; ">Backend Engineering Technical Assessment &nbsp;·&nbsp; Planet Labs</b>
+							<br>
+
+							<div class="tech-tags">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">FastAPI</span>
+								<span class="tech-tag">PostgreSQL</span>
+								<span class="tech-tag">SQLAlchemy</span>
+								<span class="tech-tag">pandas</span>
+								<span class="tech-tag">GeoPandas</span>
+								<span class="tech-tag">Shapely</span>
+								<span class="tech-tag">Docker Compose</span>
+								<span class="tech-tag">Pytest</span>
+							</div>
+
+							<div class="impact-box">
+								<p>
+									Given a raw CSV of organization usage records — each with a footprint geometry stored as GeoJSON — I designed and built a backend service that
+									sanitizes that data, loads it into PostgreSQL, and serves it through a FastAPI layer ready to drive a heatmap frontend. The full stack —
+									database, ETL job, API, and test suite — runs from a single Docker Compose command, with a written design doc covering the ETL design,
+									API/database architecture, complex-geometry handling, an authentication proposal, and a CI/CD pipeline plan.
+								</p>
+							</div>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Key Accomplishments</h3>
+
+							<h4 style="margin-top: 20px;">🛠️ ETL Pipeline</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Built an Extract–Transform–Load pipeline that parses GeoJSON footprint strings into Shapely geometries, drops and logs invalid geometries (e.g. entries missing a required GeoJSON "type" member) instead of failing the whole batch, and loads the result into PostgreSQL as a GeoDataFrame converted to WKT</li>
+								<li>Ran the pipeline as its own Docker Compose service ahead of the API container, keeping data processing failures isolated from API logs and avoiding repeat ETL runs by checking for an existing table before reprocessing</li>
+								<li>Documented an approach for handling Planet-scale complex geometries — geometry simplification and validity checks via Shapely's <code>simplify()</code> and <code>is_valid</code> — to keep large, high-vertex footprints from degrading downstream rendering</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">⚙️ API &amp; Database Design</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Exposed two endpoints — listing all organization IDs and fetching geometry data for a given org (or all orgs via a wildcard) — behind a FastAPI layer with Pydantic validation and automatic OpenAPI docs</li>
+								<li>Introduced a <code>Database</code> class as the sole point of contact with PostgreSQL, decoupling query logic from route handlers so new data sources or operations can be added without touching the API layer</li>
+								<li>Wrote a design doc proposing JWT/OAuth2-based authentication with tiered access (public, user, admin) for future hardening of the API</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">✅ Testing &amp; Delivery</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Containerized the database, ETL job, API, and a dedicated test runner in Docker Compose so the entire stack — including the test suite — starts with one command</li>
+								<li>Drove the test suite to <strong>97% code coverage</strong> with Pytest and held a <strong>9.81/10 pylint score</strong> across the codebase</li>
+								<li>Authored a full design document and proposed CI/CD pipeline (lint → security scan → unit/integration tests → staged deploy → release → docs) for taking the service from take-home assessment to production</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Architecture</h3>
+							<div class="screenshot-gallery single">
+								<figure>
+									<img src="../images/footprint/architecture-diagram.png" alt="Docker Compose startup flow: create the database, run the ETL pipeline against the source CSV to load PostgreSQL, then launch the FastAPI service" />
+									<figcaption>Docker Compose startup sequence: the database is created, the ETL pipeline loads the sanitized CSV data into PostgreSQL, then the FastAPI service launches on top of it.</figcaption>
+								</figure>
+							</div>
+
+							<br><a href="../index.html#projects" class="button">Back</a>
+
+					</section>
+
+
+				<!-- Four -->
+				<section id="four">
+					<h2>Get In Touch</h2>
+					<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
+
+						<div class="col-4 col-12-small">
+							<ul class="labeled-icons">
+								<li>
+									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+									matthewcameroncann@gmail.com
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+					</ul>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Lightbox overlay for screenshot gallery -->
+		<div class="lightbox-overlay" id="lightbox-overlay">
+			<img id="lightbox-overlay-img" src="" alt="" />
+		</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				(function () {
+					var overlay = document.getElementById('lightbox-overlay');
+					var overlayImg = document.getElementById('lightbox-overlay-img');
+
+					document.querySelectorAll('.screenshot-gallery img').forEach(function (img) {
+						img.addEventListener('click', function () {
+							overlayImg.src = img.src;
+							overlayImg.alt = img.alt;
+							overlay.classList.add('is-visible');
+						});
+					});
+
+					overlay.addEventListener('click', function () {
+						overlay.classList.remove('is-visible');
+						overlayImg.src = '';
+					});
+
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') {
+							overlay.classList.remove('is-visible');
+							overlayImg.src = '';
+						}
+					});
+				})();
+			</script>
+
+	</body>
+</html>

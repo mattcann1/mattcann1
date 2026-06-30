@@ -9,19 +9,20 @@
 		<title>Matthew Cann </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
 		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
 
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<a href="#" class="image avatar"><img src="images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+					<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
 					<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
 						<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
 			</header>
+
 
 		<!-- Main -->
 			<div id="main">
@@ -29,25 +30,116 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Exective Member - Program Manager</h2> 
-							<img class="image fit" src="images/UMSATS.jpg", style = "width:40%;position: relative; left: -10px; bottom: 00px;padding-bottom: 00px;" alt="" />
-							<b style = "color: black; font-weight: 900; "> 2015 - 2018</b><br><br>
+							<h2>Undergraduate Thesis</h2>
 
 						</header>
+						<p>
+							<img class="w3-image"><img src="../images/uofm.jpg", style = "width:30%;position: relative; left: -20px; bottom: 20px;padding-bottom: 00px;" alt="" /><br>
+							<b style = "color: black; font-weight: 900; "> 2018-2019</b><br><br>
 
-							<p>		
-							As the executive program manager, I worked with the cross-disciplinary team sections to develop a Cubesat to enter the Canadian Satellite Design Challenge (CSDC). 
+							The global push for energy conservation and energy-efficient systems has fueled the interest in heat
+							exchanger research. Furthermore, the effect of the quality of the grid and mesh generation software on
+							the accuracy, convergence, and computational resource has not been demonstrated in the literature.
+							The research in heat exchanger enhancement through improving the design and further contribute to
+							current literature was the basis for this research.<br>
+							This thesis presents the optimization of an existing compact heat exchanger design using data from
+							computational fluid dynamics (CFD) analyses. The geometry chosen for the study was a commonly found
+							Z configuration heat exchanger with two branches. <br>
 
-							<br>I aided in the Preliminary Design Review by creating a risk management plan for the satellite's mission. 
-								
-							<br>Furthermore, I presented the preliminary design review at the 2018 Canadian Satellite Design Challenge - Preliminary Design Review, Toronto, ON.
-	 
 
-							<br><b style = "color: black; font-weight: 900; ">Placed first place in 2018 CSDC.</b><br>
+							<br><img class="w3-image"  src="../images/Undergrad_thesis/Geo.png", style = "width:50%;" alt="" />(a)
+							<img class="w3-image"  src="../images/Undergrad_thesis/Geo2.png", style = "width:15%;" alt="" />(b)<br>
+							<figcaption style = "font-style: italic; ">Fig.1 - Configuration A dimensions for (a) side view and (b) front view in mm. </figcaption>
 
 
 							<br>
-							<a href="index.html" class="button">Back</a>
+							The geometry was then discretized into a variety of grids and quantitative comparison of generated meshes and the effects of meshing parameters provided
+							a suitable approach to mesh the geometry. 
+
+							<br><img class="w3-image"  src="../images/Undergrad_thesis/Mesh_hex.png", style = "width:40%;" alt="" />(a)
+							<img class="w3-image"  src="../images/Undergrad_thesis/Mesh_tetra.png", style = "width:40%;" alt="" />(b)<br>
+							<figcaption style = "font-style: italic; ">Fig.2 - Magnified views of the refernce mesh using (a) hexahedral and (b) tetrahedral elements. </figcaption>
+
+							<br>With the boundary conditions and domain, the fluid field was solved using CFD simulations through ANSYS CFX 19.2. A parametric study was conducted to
+                            identify the factors that produce an efficient and optimal design of a branching flow heat exchanger.
+							
+							<br><br>
+
+							<header>
+								<h3>Mesh Analysis</h3>
+							</header>
+
+							<p>
+							The quantitative comparison of generated meshes and the effects of meshing parameters through the mesh analyses is a key aspect investigated in this study. Using ANSYS meshing, three tetrahedral and three hexahedral grids were produced with varying levels of refinement. Using ICEM meshing, three levels of refinement were produced for a hexahedral mesh.
+							<br>
+							The independence of the grids was evaluated on two levels, local and global. Local velocity profiles at two locations were used to judge the grids ability to provide convergent results. The flow at sample line 1 is not too complex to ensure the grids can accurately solve the general flow while sample line 2 was used to study how the grid resolves more complex flow with recirculation. 
+							Hexahedral reference grid ~4 million nodes.
+							The global parameters used to evaluate convergence were the non-dimensional pressure drop and non-dimensional mass flow rate distribution between the branches. Furthermore, the order of convergence and grid convergence index (GCI) were determined for each grid set.
+	  
+							<br>
+							<img class="w3-image"  src="../images/Undergrad_thesis/Hex_mesh.png", style = "width:40%;" alt="" />(a)
+							<img class="w3-image"  src="../images/Undergrad_thesis/Tetra_mesh.png", style = "width:40%;" alt="" />(b)
+							<img class="w3-image"  src="../images/Undergrad_thesis/Hex_icem.png", style = "width:40%;" alt="" />(c)
+
+							<figcaption style = "font-style: italic; ">Fig.3 - Local velocity profile of sample line 2 for the (a) ANSYS hexahedral, (b) ANSYS tetrahedral, and (c) ICEM hexahedral grids.</figcaption>
+							<br>
+							Concerning the global parameters, the variation in accuracy is attributed to the dependence the pressure drop has on the specific flow behaviour. Any variation in the turbulent zones and velocity will directly reduce the accuracy of the results.
+							Figure 4 shows the deviation of the velocity results between the hexahedral and tetrahedral grids.
+
+							<br>
+							<img class="w3-image"  src="../images/Undergrad_thesis/Mesh_comp_better.png", style = "width: 80%;" alt="" />(c)
+							<figcaption style = "font-style: italic; ">Fig.4 - Velocity contour of combing flow in the bottom header from (left) hexahedral grid H3 and (right) tetrahedral grid T2.</figcaption>
+
+							<br>
+							<b style = "color: black; font-weight: 900; ">Mesh Analysis Results</b><br>
+							&emsp;&emsp;• The finest hexahedral grid showed the best results with non-dimensional pressure drop varying by only 0.86%. <br>
+							&emsp;&emsp;• Furthermore, the Hexahedral grid showed improved convergence behavior 𝑝=1.54,GCI= 2.7%.<br>
+							&emsp;&emsp;• The hexahedral grid was chosen to pursure further due to the advantage of better convergence behaviour and accuracy while not requiring a dramatic increase in computational resources. <br>
+							&emsp;&emsp;• ANSYS meshing was chosen due to its easy production of the unstructured hexahedral grid without a large time commitment of meshing at the cost of more difficult refinement.
+
+						</p>
+						<header>
+							<h3>Parametric Study</h3>
+						</header>
+						<p>In the parametric study, the Reynolds number, number of branches and spacing was varied with the inlet diameter held constant. Furthermore, the width of the branches (10mm) and the length of the inlet and outlet portion (5D) are kept constant during each case.
+							The parametric study was conducted to determine the effects of the parameters on the non-dimensional pressure drop and the misdistribution of flow. <br>
+							
+							<br><b style = "color: black; font-weight: 900; ">Spacing Effects</b><br>
+
+							Increasing the spacing between branches resulted in:<br>
+							&emsp;&emsp;• ~5% increase pressure drop<br>
+							&emsp;&emsp;• ~ 30% decrease maldistribution<br>
+
+							<br><img class="w3-image"  src="../images/Undergrad_thesis/Space.png", style = "width:90%;" alt="" /><br>
+							<figcaption style = "font-style: italic; ">Fig.5 - Velocity contour of increasing branch spacing from 0.5D to 1.5D.</figcaption>
+							<br>
+							<br><b style = "color: black; font-weight: 900; ">Number of Branches</b><br>
+							Increasing the number of branches resulted in:<br>
+							&emsp;&emsp;• ~ 62% decrease in pressure drop<br>
+							&emsp;&emsp;• ~ 71% increase in maldistribution<br>
+
+							<br><img class="w3-image"  src="../images/Undergrad_thesis/Num.png", style = "width:50%;" alt="" /><br>
+							<figcaption style = "font-style: italic; ">Fig.6 - The non-dimensional mass flow rate through branches.</figcaption>
+
+							<br><b style = "color: black; font-weight: 900; ">Reynolds Number</b><br>
+							Increasing the Reynolds Number resulted in:<br>
+							&emsp;&emsp;• ~12% decrease in pressure drop<br>
+							&emsp;&emsp;• <1% change in maldistribution <br>
+							
+							
+							<br><img class="w3-image"  src="../images/Undergrad_thesis/Rey.png", style = "width:90%;" alt="" /><br>
+							<figcaption style = "font-style: italic; ">Fig.7 -Velocity contour of increasing Reynolds Number from laminar (Re = 2000) to turbulent (Re= 10000).</figcaption>
+
+
+							<br>In conclusion, the CFD analysis provided a valuable tool to optimize the design of a branching flow
+							heat exchanger. The mesh analysis determined the optimal meshing approach that results in a reliable,
+							convergent, accurate, and efficient simulation for future studies in the growing field on heat exchanger
+							research. 
+							<br><br>
+
+
+							<br>
+							<a href="../index.html#projects" class="button">Back</a>
 
 					</section>
 
@@ -366,21 +458,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							<h5>Fit</h5>
 							<div class="box alt">
 								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
+									<div class="col-12"><span class="image fit"><img src="../images/fulls/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/01.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/04.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/05.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/06.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/03.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/02.jpg" alt="" /></span></div>
+									<div class="col-4"><span class="image fit"><img src="../images/thumbs/01.jpg" alt="" /></span></div>
 								</div>
 							</div>
 							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image left"><img src="../images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+							<p><span class="image right"><img src="../images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
 						</section>
 
 					</section>
@@ -395,17 +487,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
 					</ul>
-					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

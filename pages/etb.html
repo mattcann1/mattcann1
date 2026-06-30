@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matthew Cann</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/custom.css" />
+		<link rel = "icon" href = "images/light-bulb.svg" type = "image/x-icon">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/headshot2.jpg", style = "width:120%;position: relative; right: 30px;" alt="" /></a>
+				<h1><strong style = "font-size: 200%;font-weight: bold;color:whitesmoke">Matthew Cann</strong>
+					<br />A software developer with an interest in the intersection of <b style = "color:white; font-weight: 500; ">Renewable Energy </b> and <b style = "color:white; font-weight: 500; ">Machine Learning</b>. <br /></a></h1>				</div>
+		</header>
+
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>Software Developer – Battery Storage Control Systems</h2>
+						</header>
+						<p>
+							<br>
+							<img class="w3-image"><img src="../images/Energy_Toolbase_logo_file_high_res_.png", style = "width:50%;position: relative; bottom: 40px;padding-bottom: 10px;" alt="" /><br>
+							<b style = "color: black; font-weight: 900; "> 2022-2023</b>
+							<br>
+
+							<div class="tech-tags">
+								<span class="tech-tag">Python</span>
+								<span class="tech-tag">FastAPI</span>
+								<span class="tech-tag">MQTT</span>
+								<span class="tech-tag">InfluxDB</span>
+								<span class="tech-tag">Redis</span>
+								<span class="tech-tag">AWS IoT Greengrass</span>
+								<span class="tech-tag">Docker</span>
+								<span class="tech-tag">scikit-learn</span>
+							</div>
+
+							<div class="impact-box">
+								<p>
+									Energy Toolbase's Advanced Energy Storage System is a distributed edge-control platform that orchestrates real-time charge/discharge decisions for commercial
+									battery energy storage, deployed across multi-site utility-scale and behind-the-meter solar+storage installations. I worked across the platform's two
+									core control services, its forecasting integration, and the data-quality safeguards that keep a fleet of edge devices reporting trustworthy numbers.
+								</p>
+							</div>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Key Accomplishments</h3>
+
+							<h4 style="margin-top: 20px;">🔋 Battman — Battery Management Controller</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Built the platform's central decision engine, orchestrating charge/discharge commands to inverters and batteries via HTTP and MQTT</li>
+								<li>Implemented and maintained <strong>15+ optimization strategies</strong> — demand shaving, time-of-use arbitrage, PV self-consumption, demand-response load following, and closed-loop safe-charging control — selectable at runtime with zero-downtime switching</li>
+								<li>Modeled utility tariff structures (multi-tier TOU periods, ratchet demand clauses, seasonal rate changes) to drive cost-minimizing dispatch decisions</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">📊 Meter Service — Grid Load Aggregation</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Built the platform's authoritative source of site load data, normalizing readings from <strong>5+ Modbus meter vendors</strong> and cloud APIs into a single consistent stream</li>
+								<li>Designed cumulative energy tracking with automatic 64-bit counter rollover detection, and billing-aligned demand-peak tracking with crash-safe persistence</li>
+								<li>Built a pluggable source interface so new meter vendors could be added with a device mapping file rather than new integration code</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">🤖 Forecasting Integration</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Integrated scikit-learn–based load and solar forecasting into the control loop, enabling predictive battery state-of-charge positioning ahead of demand peaks and rate transitions</li>
+								<li>Closed the loop from measured load through forecast to dispatch decision, with real-time forecast correction as new actuals arrived</li>
+							</ul>
+
+							<h4 style="margin-top: 20px;">🛡️ Data Quality &amp; Reliability</h4>
+							<ul style="line-height: 1.8em;">
+								<li>Enforced schema validation at every service boundary (device configs, API contracts, inter-service messages) to reject misconfigured deployments before they reached hardware</li>
+								<li>Built scheduling-constraint validation to prevent overlapping or invalid control windows across concurrent strategies</li>
+								<li>Added automated gap-fill and resampling for cloud-synced meter data, ensuring forecasting models trained on complete, aligned time series</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Technical Skills Demonstrated</h3>
+							<ul style="line-height: 1.8em;">
+								<li><strong>Languages:</strong> Python</li>
+								<li><strong>Frameworks:</strong> FastAPI, pydantic, asyncio</li>
+								<li><strong>Messaging &amp; Data:</strong> MQTT, InfluxDB, Redis, pandas</li>
+								<li><strong>Cloud &amp; Deployment:</strong> AWS IoT Greengrass, Docker, Docker Compose, CircleCI</li>
+								<li><strong>ML / Forecasting:</strong> scikit-learn (SVR, ensemble forecasting)</li>
+								<li><strong>Hardware Integration:</strong> Modbus RTU/TCP, multi-vendor battery and inverter APIs</li>
+							</ul>
+
+							<h3 style="color: #49bf9d; margin-top: 30px;">Quantifiable Impact</h3>
+							<ul style="line-height: 1.8em;">
+								<li>⚙️ <strong>15+ control strategies</strong> shipped and selectable at runtime with zero-downtime switching</li>
+								<li>🔌 <strong>10+ battery vendors</strong> and <strong>5+ inverter/meter vendors</strong> integrated behind common device interfaces</li>
+								<li>📦 Contributed to <strong>99+ versioned production releases</strong> (v0.45.2 → v9.0.1) of the edge-control platform</li>
+								<li>🌐 Deployed across multi-site commercial solar+storage installations via AWS IoT Greengrass</li>
+							</ul>
+
+							<br><a href="../index.html#experience" class="button">Back</a>
+
+					</section>
+
+
+				<!-- Four -->
+				<section id="four">
+					<h2>Get In Touch</h2>
+					<p>If you have any questions or want to get in touch, please feel free to contact me!</p>
+
+						<div class="col-4 col-12-small">
+							<ul class="labeled-icons">
+								<li>
+									<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+									matthewcameroncann@gmail.com
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://github.com/mattcann1" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.linkedin.com/in/matthew-cann" class="icon brands fa-linkedin"><span class="label">linkedin</span></a></li>
+					</ul>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.poptrox.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
